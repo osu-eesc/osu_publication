@@ -1,0 +1,131 @@
+<?php
+/**
+ * @file
+ * Code for the OSU publication feature.
+ */
+
+include_once('osu_publication.features.inc');
+/**
+ * Implements hook_init().
+ */
+// function osu_publication_init() {
+//   drupal_add_css(drupal_get_path('module', 'osu_publication') . '/commerce_styles.css');
+//   drupal_add_css(drupal_get_path('module', 'osu_publication') . '/osu_publication_layout.css');
+//   drupal_add_js(drupal_get_path('module', 'osu_publication') . '/osu_publication.js');
+// }
+
+/**
+ * Implements hook_form_alter.
+ */
+function osu_publication_form_alter(&$form, &$form_state, $form_id){
+  if($form_id == 'search_block_form'){
+    $form['search_block_form']['#title'] = t('Submit');
+    $form['actions']['submit']['#value'] = t('Submit');
+    $form['search_block_form']['#size'] = 30;
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search by topic, author, or series number');
+  }
+  if($form['#id'] == 'views-exposed-form-osu-publication-taxonomy-term-topic-child-term-page'){
+    $form['field_media_type_tid']['#options']['All'] = 'Media Type';
+  }
+
+  if ($form_id == 'osu_catalog_publication_node_form') { 
+
+    // don't change existing value
+    if ($form['field_series_number']['und'][0]['value']['#default_value'] == '') {
+
+      $form['field_series_prefix'] = array(
+        '#title' => t('Series prefix'),
+        '#type' => 'select',
+        '#options' => $form['field_series_prefix']['und']['#options'],
+        '#ajax' => array(
+          'callback' => 'series_number_callback',
+          'wrapper' => 'series_number_div',
+        ),
+      );
+
+      $nextseriesnum = '';
+
+      if (!empty($form_state['values']['field_series_prefix'])) {
+        // pass arg to view to get the highest series number
+        $args[0] = $form_state['values']['field_series_prefix'];
+        $view = views_get_view('suggest_series_number');
+        $display_id = 'nextseriesnumber';
+        $view->set_display($display_id);
+        $view->execute_display($display_id, $args);
+        $results = $view->result;
+        $nextseriesnum = $results[0]->field_data_field_series_number_field_series_number_value + 1;
+      }
+
+      // This entire form element will be replaced with an updated value.
+      $form['field_series_number'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Series number'),
+        '#value' => $nextseriesnum,
+        '#prefix' => '<div id="series_number_div">',
+        '#suffix' => '</div>',
+      );
+
+    }
+
+  }
+
+}
+
+function series_number_callback($form, $form_state) {
+  return $form['field_series_number'];
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function osu_publication_token_info(){
+  $info['types']['node'] = array(
+    /*'name' => t('Topic First'),
+    'description' => t('Grabs the first topic value.'),
+    'needs-data' => 'node',*/
+  );
+  // Topic token.
+  $info['tokens']['node']['field-topic-first-title'] = array(
+    'name' => t('Publication topic'),
+    'description' => t("The topic of the publication."),
+    'type' => 'node',
+  );
+  // Topic token.
+  $info['tokens']['node']['field-topic-first-tid'] = array(
+    'name' => t('Publication topic'),
+    'description' => t("The topic of the publication."),
+    'type' => 'node',
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function osu_publication_tokens($type, $tokens, array $data = array(), array $options = array()){
+  $replacements = array();
+  $sanitize = !empty($options['sanitize']);
+
+  if ($type == 'node' && !empty($data['node'])){
+    $node = $data['node'];
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'field-topic-first-tid':
+          if ($items = field_get_items('node', $node, 'field_topic')) {
+            $replacements[$original] = $sanitize ? filter_xss($items[0]['tid']) : $items[0]['tid'];
+          }
+        break;
+
+        case 'field-topic-first-title':
+          if ($items = field_get_items('node', $node, 'field_topic')) {
+            $term_object = taxonomy_term_load($items[0]['tid']);
+            $replacements[$original] = $sanitize ? filter_xss($term_object->name) : $term_object->name;
+          }
+        break;
+
+
+      }
+    }
+  }
+  return $replacements;
+}
