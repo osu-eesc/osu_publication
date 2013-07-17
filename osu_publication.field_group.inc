@@ -120,8 +120,9 @@ function osu_publication_field_group_info() {
       0 => 'field_project_manager',
       1 => 'field_general_notes',
       2 => 'field_publication_status',
-      3 => 'field_status_date',
-      4 => 'field_corresponding_author',
+      3 => 'field_corresponding_author',
+      4 => 'field_program_area',
+      5 => 'field_status_date',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

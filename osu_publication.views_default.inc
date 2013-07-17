@@ -295,7 +295,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Media Type */
+  /* Field: Content: Media type */
   $handler->display->display_options['fields']['field_media_type']['id'] = 'field_media_type';
   $handler->display->display_options['fields']['field_media_type']['table'] = 'field_data_field_media_type';
   $handler->display->display_options['fields']['field_media_type']['field'] = 'field_media_type';
@@ -510,7 +510,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['relationships']['field_companion_resources_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_companion_resources_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Media Type */
+  /* Field: Content: Media type */
   $handler->display->display_options['fields']['field_media_type']['id'] = 'field_media_type';
   $handler->display->display_options['fields']['field_media_type']['table'] = 'field_data_field_media_type';
   $handler->display->display_options['fields']['field_media_type']['field'] = 'field_media_type';
@@ -586,7 +586,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Assets */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_assets']['id'] = 'field_assets';
   $handler->display->display_options['fields']['field_assets']['table'] = 'field_data_field_assets';
   $handler->display->display_options['fields']['field_assets']['field'] = 'field_assets';
@@ -598,9 +598,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_assets']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['field_assets']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_assets']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_assets']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_assets']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_assets']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -676,7 +673,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '20';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
-  /* Field: Content: New or Revised */
+  /* Field: Content: New or revised */
   $handler->display->display_options['fields']['field_new_or_revised']['id'] = 'field_new_or_revised';
   $handler->display->display_options['fields']['field_new_or_revised']['table'] = 'field_data_field_new_or_revised';
   $handler->display->display_options['fields']['field_new_or_revised']['field'] = 'field_new_or_revised';
@@ -700,7 +697,7 @@ function osu_publication_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Media Type */
+  /* Field: Content: Media type */
   $handler->display->display_options['fields']['field_media_type']['id'] = 'field_media_type';
   $handler->display->display_options['fields']['field_media_type']['table'] = 'field_data_field_media_type';
   $handler->display->display_options['fields']['field_media_type']['field'] = 'field_media_type';
@@ -840,7 +837,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_topic']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Content: Assets */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_assets']['id'] = 'field_assets';
   $handler->display->display_options['fields']['field_assets']['table'] = 'field_data_field_assets';
   $handler->display->display_options['fields']['field_assets']['field'] = 'field_assets';
@@ -848,11 +845,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_assets']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_assets']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_assets']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_assets']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_assets']['type'] = 'link_title_plain';
-  $handler->display->display_options['fields']['field_assets']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_assets']['delta_offset'] = '0';
-  /* Field: Content: Assets */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_assets_1']['id'] = 'field_assets_1';
   $handler->display->display_options['fields']['field_assets_1']['table'] = 'field_data_field_assets';
   $handler->display->display_options['fields']['field_assets_1']['field'] = 'field_assets';
@@ -863,9 +856,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_assets_1']['alter']['path'] = '[field_assets_1-url]';
   $handler->display->display_options['fields']['field_assets_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_assets_1']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_assets_1']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_assets_1']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_assets_1']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -897,7 +887,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'osu_catalog_publication' => 'osu_catalog_publication',
   );
-  /* Filter criterion: Content: Assets (field_assets:attributes) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_assets_attributes']['id'] = 'field_assets_attributes';
   $handler->display->display_options['filters']['field_assets_attributes']['table'] = 'field_data_field_assets';
   $handler->display->display_options['filters']['field_assets_attributes']['field'] = 'field_assets_attributes';
@@ -1171,7 +1161,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: New or Revised */
+  /* Field: Content: New or revised */
   $handler->display->display_options['fields']['field_new_or_revised']['id'] = 'field_new_or_revised';
   $handler->display->display_options['fields']['field_new_or_revised']['table'] = 'field_data_field_new_or_revised';
   $handler->display->display_options['fields']['field_new_or_revised']['field'] = 'field_new_or_revised';
@@ -1240,7 +1230,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['group'] = 0;
   $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Media Type (field_media_type) */
+  /* Filter criterion: Content: Media type (field_media_type) */
   $handler->display->display_options['filters']['field_media_type_tid']['id'] = 'field_media_type_tid';
   $handler->display->display_options['filters']['field_media_type_tid']['table'] = 'field_data_field_media_type';
   $handler->display->display_options['filters']['field_media_type_tid']['field'] = 'field_media_type_tid';
@@ -1263,7 +1253,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['group'] = 0;
   $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Media Type (field_media_type) */
+  /* Filter criterion: Content: Media type (field_media_type) */
   $handler->display->display_options['filters']['field_media_type_tid']['id'] = 'field_media_type_tid';
   $handler->display->display_options['filters']['field_media_type_tid']['table'] = 'field_data_field_media_type';
   $handler->display->display_options['filters']['field_media_type_tid']['field'] = 'field_media_type_tid';

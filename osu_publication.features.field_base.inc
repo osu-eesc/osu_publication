@@ -105,65 +105,6 @@ function osu_publication_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_assets'
-  $field_bases['field_assets'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_assets',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_author'
-  $field_bases['field_author'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_author',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_author_notes'
   $field_bases['field_author_notes'] = array(
     'active' => 1,
@@ -255,6 +196,7 @@ function osu_publication_field_default_field_bases() {
     'module' => 'node_reference',
     'settings' => array(
       'referenceable_types' => array(
+        'account_type' => 0,
         'osu_catalog_publication' => 'osu_catalog_publication',
         'page' => 0,
         'publication_author' => 0,
@@ -294,6 +236,7 @@ function osu_publication_field_default_field_bases() {
     'module' => 'node_reference',
     'settings' => array(
       'referenceable_types' => array(
+        'account_type' => 0,
         'osu_catalog_publication' => 0,
         'page' => 0,
         'publication_author' => 'publication_author',
@@ -454,7 +397,7 @@ function osu_publication_field_default_field_bases() {
   // Exported field_base: 'field_length'
   $field_bases['field_length'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_length',
@@ -534,7 +477,7 @@ function osu_publication_field_default_field_bases() {
         'online' => 'Online',
         'preview' => 'Preview',
         'print_on_demand' => 'Print-on-demand',
-        'printed' => 'Printed',
+        'print' => 'Print',
       ),
       'allowed_values_function' => '',
     ),
@@ -597,6 +540,40 @@ function osu_publication_field_default_field_bases() {
     'type' => 'commerce_product_reference',
   );
 
+  // Exported field_base: 'field_program_area'
+  $field_bases['field_program_area'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_program_area',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'program_area',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_project_manager'
   $field_bases['field_project_manager'] = array(
     'active' => 1,
@@ -617,8 +594,11 @@ function osu_publication_field_default_field_bases() {
         0 => 'Not assigned',
         1 => 'Jennifer Alexander',
         2 => 'Ariel Ginsburg',
-        3 => 'Jeff Hino',
-        4 => 'Tiffany Woods',
+        3 => 'Tamara Hill-Tanquist',
+        4 => 'Jeff Hino',
+        5 => 'Dio Morales',
+        6 => 'Jim Sloan',
+        7 => 'Tiffany Woods',
       ),
       'allowed_values_function' => '',
     ),

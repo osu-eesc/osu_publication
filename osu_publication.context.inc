@@ -101,7 +101,7 @@ function osu_publication_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'sidebar_menus';
-  $context->description = 'Blocks containing the Browse by Topic and Browse by Media Type view blocks';
+  $context->description = 'Blocks containing the Browse by Topic  view block';
   $context->tag = 'views, block, taxonomy';
   $context->conditions = array(
     'path' => array(
@@ -126,12 +126,6 @@ function osu_publication_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'views-7ce3f944f1b84262eec1106fd67023f4' => array(
-          'module' => 'views',
-          'delta' => '7ce3f944f1b84262eec1106fd67023f4',
-          'region' => 'sidebar_first',
-          'weight' => '-9',
-        ),
       ),
     ),
   );
@@ -139,7 +133,7 @@ function osu_publication_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Blocks containing the Browse by Topic and Browse by Media Type view blocks');
+  t('Blocks containing the Browse by Topic  view block');
   t('views, block, taxonomy');
   $export['sidebar_menus'] = $context;
 

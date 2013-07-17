@@ -35,7 +35,7 @@ function osu_publication_views_api() {
 function osu_publication_node_info() {
   $items = array(
     'osu_catalog_publication' => array(
-      'name' => t('Publication'),
+      'name' => t('Project'),
       'base' => 'node_content',
       'description' => t('Use for adding and editing projects that will be published in the OSU Extension Catalog'),
       'has_title' => '1',
@@ -43,7 +43,7 @@ function osu_publication_node_info() {
       'help' => '',
     ),
     'publication_author' => array(
-      'name' => t('Publication author'),
+      'name' => t('Author'),
       'base' => 'node_content',
       'description' => t('Use for adding and editing publication authors'),
       'has_title' => '1',

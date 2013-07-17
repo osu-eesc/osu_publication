@@ -10,53 +10,12 @@
 function osu_publication_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-osu_catalog_publication-body'
-  $field_instances['node-osu_catalog_publication-body'] = array(
-    'bundle' => 'osu_catalog_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Abstract',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-osu_catalog_publication-field_account_type'
   $field_instances['node-osu_catalog_publication-field_account_type'] = array(
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter the primary account for this item. (For example, if this is an agriculture publication, select account Publications - Agriculture TEX667 T721.)<br> If you want to record additional details about expenses for this item, do so in the "Estimate and expense notes" field below.<br><em>Note: Account and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -84,9 +43,6 @@ function osu_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
       ),
       'type' => 'options_select',
       'weight' => 46,
@@ -132,7 +88,7 @@ function osu_publication_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 43,
+      'weight' => 42,
     ),
   );
 
@@ -176,112 +132,12 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-osu_catalog_publication-field_assets'
-  $field_instances['node-osu_catalog_publication-field_assets'] = array(
-    'bundle' => 'osu_catalog_publication',
-    'default_value' => array(
-      0 => array(
-        'title' => 'View it now for free',
-        'url' => 'http://oregonstate.edu',
-        'attributes' => array(
-          'target' => 0,
-        ),
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_assets',
-    'label' => 'Assets',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'user',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => 'View it now for free',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-osu_catalog_publication-field_author'
-  $field_instances['node-osu_catalog_publication-field_author'] = array(
-    'bundle' => 'osu_catalog_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_author',
-    'label' => 'Author',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-osu_catalog_publication-field_author_reference'
   $field_instances['node-osu_catalog_publication-field_author_reference'] = array(
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.',
+    'description' => 'Enter a few characters of the author name. When you see the correct author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -322,7 +178,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This is the place to designate catalog items that you want to <strong>always</strong> appear together in the OSU Extension Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -362,7 +218,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it.',
+    'description' => 'Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -380,7 +236,7 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_corresponding_author',
     'label' => 'Corresponding author',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -418,7 +274,7 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_date_reviewed',
-    'label' => 'Date Reviewed',
+    'label' => 'Date reviewed',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -438,8 +294,8 @@ function osu_publication_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
-      'weight' => 39,
+      'type' => 'date_popup',
+      'weight' => 40,
     ),
   );
 
@@ -465,7 +321,7 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_eesc_produced_purchased',
-    'label' => 'EESC Produced/Purchased',
+    'label' => 'EESC-produced or purchased',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -513,7 +369,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 3,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 37,
@@ -544,7 +400,7 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_length',
     'label' => 'Length',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -582,18 +438,15 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_media_type',
-    'label' => 'Media Type',
-    'required' => 1,
+    'label' => 'Media type',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
+      'settings' => array(),
       'type' => 'taxonomy_hs',
       'weight' => 11,
     ),
@@ -631,7 +484,7 @@ function osu_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 42,
+      'weight' => 37,
     ),
   );
 
@@ -661,7 +514,7 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_new_or_revised',
-    'label' => 'New or Revised',
+    'label' => 'New or revised',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -673,7 +526,7 @@ function osu_publication_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 37,
+      'weight' => 38,
     ),
   );
 
@@ -724,7 +577,46 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'commerce_product_reference_autocomplete',
-      'weight' => 45,
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance: 'node-osu_catalog_publication-field_program_area'
+  $field_instances['node-osu_catalog_publication-field_program_area'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the Extension program area for this project.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 42,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_program_area',
+    'label' => 'Program area',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 34,
     ),
   );
 
@@ -754,8 +646,8 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_project_manager',
-    'label' => 'Project Manager',
-    'required' => 0,
+    'label' => 'Project manager',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -826,8 +718,8 @@ function osu_publication_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
-      'weight' => 38,
+      'type' => 'date_popup',
+      'weight' => 39,
     ),
   );
 
@@ -951,7 +843,7 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 45,
+      'weight' => 44,
     ),
   );
 
@@ -993,7 +885,7 @@ function osu_publication_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 35,
     ),
   );
 
@@ -1069,7 +961,7 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_review_notes',
-    'label' => 'Review Notes',
+    'label' => 'Review notes',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -1079,10 +971,10 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 3,
+        'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 40,
+      'weight' => 41,
     ),
   );
 
@@ -1091,7 +983,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the full URL from the ScholarsArchive or other URL for the item',
+    'description' => 'Enter the permanent link for the item. (For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1109,7 +1001,7 @@ function osu_publication_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_scholars_archive_url',
-    'label' => 'Permanent URL',
+    'label' => 'Permanent link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -1123,6 +1015,7 @@ function osu_publication_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'rel_remove' => 'default',
       'title' => 'none',
       'title_maxlength' => 128,
       'title_value' => '',
@@ -1271,9 +1164,16 @@ function osu_publication_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1285,7 +1185,7 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_status_date',
     'label' => 'Status date',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -1297,14 +1197,14 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'increment' => 1,
-        'input_format' => 'custom',
-        'input_format_custom' => 'm/d/y',
-        'label_position' => 'none',
+        'increment' => 15,
+        'input_format' => 'm/d/Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_popup',
       'weight' => 36,
     ),
   );
@@ -1314,7 +1214,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the title and URL of supplemental file(s)',
+    'description' => 'Enter the titles and links for supplemental files (e.g., individual chapters of a lengthy publication or podcasts that go with a written publication).',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1346,7 +1246,8 @@ function osu_publication_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
-      'title' => 'required',
+      'rel_remove' => 'default',
+      'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1385,17 +1286,14 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topic',
     'label' => 'Topic',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
+      'settings' => array(),
       'type' => 'taxonomy_hs',
       'weight' => 10,
     ),
@@ -1522,44 +1420,45 @@ function osu_publication_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Abstract');
   t('Account');
   t('Add to store');
   t('Alt series number');
-  t('Assets');
-  t('Author');
   t('Authors');
   t('Companion projects');
   t('Corresponding author');
   t('Cover image');
-  t('Date Reviewed');
   t('Date published');
+  t('Date reviewed');
   t('Description');
-  t('EESC Produced/Purchased');
-  t('Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it.');
-  t('Enter the full URL from the ScholarsArchive or other URL for the item');
-  t('Enter the title and URL of supplemental file(s)');
+  t('EESC-produced or purchased');
+  t('Enter a few characters of the author name. When you see the correct author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
+  t('Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
+  t('Enter the permanent link for the item. (For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.)');
+  t('Enter the primary account for this item. (For example, if this is an agriculture publication, select account Publications - Agriculture TEX667 T721.)<br> If you want to record additional details about expenses for this item, do so in the "Estimate and expense notes" field below.<br><em>Note: Account and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>');
+  t('Enter the titles and links for supplemental files (e.g., individual chapters of a lengthy publication or podcasts that go with a written publication).');
   t('First name');
   t('General notes');
-  t('If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
   t('Last name');
   t('Length');
-  t('Media Type');
+  t('Media type');
   t('Mode of delivery');
-  t('New or Revised');
+  t('New or revised');
   t('Notes');
-  t('Permanent URL');
+  t('Permanent link');
   t('Product');
   t('Product reference');
-  t('Project Manager');
+  t('Program area');
+  t('Project manager');
   t('Publication SKU');
-  t('Review Notes');
+  t('Review notes');
+  t('Select the Extension program area for this project.');
   t('Series number');
   t('Series prefix');
   t('Series suffix');
   t('Status');
   t('Status date');
   t('Supplemental files');
+  t('This is the place to designate catalog items that you want to <strong>always</strong> appear together in the OSU Extension Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
   t('Topic');
 
   return $field_instances;
