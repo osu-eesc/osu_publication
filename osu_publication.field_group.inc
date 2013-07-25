@@ -26,14 +26,13 @@ function osu_publication_field_group_info() {
       0 => 'field_length',
       1 => 'field_media_type',
       2 => 'field_topic',
-      3 => 'field_publication_thumbnail',
-      4 => 'field_author_reference',
-      5 => 'field_series_prefix',
-      6 => 'field_series_suffix',
-      7 => 'field_publication_description',
-      8 => 'field_series_number',
-      9 => 'field_alt_series_number',
-      10 => 'title',
+      3 => 'field_author_reference',
+      4 => 'field_series_prefix',
+      5 => 'field_series_suffix',
+      6 => 'field_publication_description',
+      7 => 'field_series_number',
+      8 => 'field_alt_series_number',
+      9 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -88,7 +87,7 @@ function osu_publication_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Estimates, expenses, and production',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_account_type',
     ),
@@ -186,8 +185,8 @@ function osu_publication_field_group_info() {
       4 => 'field_review_notes',
       5 => 'field_mode_of_delivery',
       6 => 'field_publication_sku',
-      7 => 'field_add_to_store',
-      8 => 'field_product_reference',
+      7 => 'field_product_reference',
+      8 => 'field_add_to_store',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

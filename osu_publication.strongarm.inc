@@ -132,6 +132,9 @@ function osu_publication_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -139,25 +142,25 @@ function osu_publication_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '6',
         ),
       ),
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '20',
+            'weight' => '19',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '21',
+            'weight' => '20',
             'visible' => FALSE,
           ),
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '4',
             'visible' => TRUE,
           ),
         ),
@@ -182,6 +185,18 @@ function osu_publication_strongarm() {
         'product:field_delivery_mode' => array(
           'default' => array(
             'weight' => '13',
+            'visible' => TRUE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:field_cover_image' => array(
+          'default' => array(
+            'weight' => '6',
             'visible' => TRUE,
           ),
         ),

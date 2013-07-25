@@ -67,8 +67,8 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => '',
+        0 => 0,
+        1 => 1,
       ),
       'allowed_values_function' => '',
     ),
@@ -534,7 +534,7 @@ function osu_publication_field_default_field_bases() {
     'locked' => 0,
     'module' => 'commerce_product_reference',
     'settings' => array(
-      'options_list_limit' => NULL,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
     'type' => 'commerce_product_reference',
@@ -664,35 +664,6 @@ function osu_publication_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_publication_product'
-  $field_bases['field_publication_product'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_publication_product',
-    'foreign keys' => array(
-      'product_id' => array(
-        'columns' => array(
-          'product_id' => 'product_id',
-        ),
-        'table' => 'commerce_product',
-      ),
-    ),
-    'indexes' => array(
-      'product_id' => array(
-        0 => 'product_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'commerce_product_reference',
-    'settings' => array(
-      'options_list_limit' => NULL,
-    ),
-    'translatable' => 0,
-    'type' => 'commerce_product_reference',
-  );
-
   // Exported field_base: 'field_publication_sku'
   $field_bases['field_publication_sku'] = array(
     'active' => 1,
@@ -757,36 +728,6 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_publication_thumbnail'
-  $field_bases['field_publication_thumbnail'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_publication_thumbnail',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
   );
 
   // Exported field_base: 'field_review_notes'

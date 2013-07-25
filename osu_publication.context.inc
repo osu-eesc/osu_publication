@@ -17,9 +17,9 @@ function osu_publication_context_default_contexts() {
   $context->description = 'Blocks containing the menu and (hidden) publication related blocks';
   $context->tag = 'views, block';
   $context->conditions = array(
-    'sitewide' => array(
+    'path' => array(
       'values' => array(
-        1 => 1,
+        '~proposal/list' => '~proposal/list',
       ),
     ),
   );
@@ -28,7 +28,7 @@ function osu_publication_context_default_contexts() {
       'blocks' => array(
         'nice_menus-3' => array(
           'module' => 'nice_menus',
-          'delta' => 3,
+          'delta' => '3',
           'region' => 'nav',
           'weight' => '-10',
         ),
@@ -36,13 +36,13 @@ function osu_publication_context_default_contexts() {
           'module' => 'system',
           'delta' => 'user-menu',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '19',
         ),
         'user-login' => array(
           'module' => 'user',
           'delta' => 'login',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '20',
         ),
       ),
     ),
@@ -74,11 +74,23 @@ function osu_publication_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-e786f6e58de6f60d622fbb04077280b5' => array(
+        'views-916b3498a6687d476f94edcda42c6647' => array(
           'module' => 'views',
-          'delta' => 'e786f6e58de6f60d622fbb04077280b5',
-          'region' => 'sidebar_first',
+          'delta' => '916b3498a6687d476f94edcda42c6647',
+          'region' => 'post_content',
           'weight' => '-10',
+        ),
+        'views-39c47360d087dc3e49f7eb0629a49993' => array(
+          'module' => 'views',
+          'delta' => '39c47360d087dc3e49f7eb0629a49993',
+          'region' => 'post_content',
+          'weight' => '-9',
+        ),
+        'views-ad17b4a470350882b2bd863b1e2ef7b8' => array(
+          'module' => 'views',
+          'delta' => 'ad17b4a470350882b2bd863b1e2ef7b8',
+          'region' => 'post_content',
+          'weight' => '-8',
         ),
         'views-109756c57e6bf112fbf77c0eee0138eb' => array(
           'module' => 'views',
@@ -114,6 +126,7 @@ function osu_publication_context_default_contexts() {
         'media-types' => 'media-types',
         'media-type/*' => 'media-type/*',
         'taxonomy/*' => 'taxonomy/*',
+        'proposal' => 'proposal',
       ),
     ),
   );

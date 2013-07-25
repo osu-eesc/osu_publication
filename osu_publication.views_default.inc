@@ -217,7 +217,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -231,18 +231,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Cover image */
-  $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
@@ -252,6 +240,15 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_topic']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
+  /* Field: Content: Product reference */
+  $handler->display->display_options['fields']['field_product_reference']['id'] = 'field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['table'] = 'field_data_field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['field'] = 'field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['type'] = 'commerce_product_reference_rendered_product';
+  $handler->display->display_options['fields']['field_product_reference']['settings'] = array(
+    'view_mode' => 'line_item',
+    'page' => 1,
+  );
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -292,9 +289,21 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Product reference */
+  $handler->display->display_options['fields']['field_product_reference']['id'] = 'field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['table'] = 'field_data_field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['field'] = 'field_product_reference';
+  $handler->display->display_options['fields']['field_product_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_product_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_reference']['type'] = 'commerce_product_reference_rendered_product';
+  $handler->display->display_options['fields']['field_product_reference']['settings'] = array(
+    'view_mode' => 'node_teaser',
+    'page' => 0,
+  );
   /* Field: Content: Media type */
   $handler->display->display_options['fields']['field_media_type']['id'] = 'field_media_type';
   $handler->display->display_options['fields']['field_media_type']['table'] = 'field_data_field_media_type';
@@ -305,7 +314,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_media_type']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_media_type']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_media_type']['delta_offset'] = '0';
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -333,19 +342,6 @@ function osu_publication_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Cover image */
-  $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['element_wrapper_class'] = 'media-type-[field_media_type]';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
   );
   $handler->display->display_options['path'] = 'node';
 
@@ -382,7 +378,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['relationships']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['relationships']['field_topic_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -407,7 +403,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'related-publications-title';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Cover image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
@@ -418,11 +414,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_wrapper_class'] = 'related-publications-thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
@@ -568,6 +559,7 @@ function osu_publication_views_default_views() {
   /* Display: Publication right sidebar block */
   $handler = $view->new_display('block', 'Publication right sidebar block', 'publication_sidebar_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'View it Now Block';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -586,18 +578,13 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_assets']['id'] = 'field_assets';
-  $handler->display->display_options['fields']['field_assets']['table'] = 'field_data_field_assets';
-  $handler->display->display_options['fields']['field_assets']['field'] = 'field_assets';
-  $handler->display->display_options['fields']['field_assets']['label'] = '';
-  $handler->display->display_options['fields']['field_assets']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_assets']['alter']['text'] = 'View it now for free';
-  $handler->display->display_options['fields']['field_assets']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_assets']['alter']['path'] = '[field_assets-url]';
-  $handler->display->display_options['fields']['field_assets']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['field_assets']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_assets']['hide_alter_empty'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'delete this at some point';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -645,7 +632,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Cover image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
@@ -653,12 +640,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_wrapper_class'] = 'media-type-[field_media_type] right';
   $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'pub_list_thumbnail',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -783,7 +765,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -817,7 +799,7 @@ function osu_publication_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Cover image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
@@ -825,11 +807,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_publication_thumbnail']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
@@ -920,7 +897,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['relationships']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['relationships']['field_topic_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';
@@ -934,18 +911,13 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Cover image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_thumbnail']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
@@ -1001,6 +973,7 @@ function osu_publication_views_default_views() {
   /* Display: Commerce right sidebar block */
   $handler = $view->new_display('block', 'Commerce right sidebar block', 'publication_sidebar_commerce_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Block of Price and Add to Cart button';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -1018,41 +991,12 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Referenced product */
-  $handler->display->display_options['relationships']['field_publication_product_product_id']['id'] = 'field_publication_product_product_id';
-  $handler->display->display_options['relationships']['field_publication_product_product_id']['table'] = 'field_data_field_publication_product';
-  $handler->display->display_options['relationships']['field_publication_product_product_id']['field'] = 'field_publication_product_product_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Commerce Product: Price */
-  $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
-  $handler->display->display_options['fields']['commerce_price']['relationship'] = 'field_publication_product_product_id';
-  $handler->display->display_options['fields']['commerce_price']['label'] = '';
-  $handler->display->display_options['fields']['commerce_price']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_price']['alter']['text'] = 'Price: [commerce_price] ';
-  $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_price']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['commerce_price']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['commerce_price']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_price']['type'] = 'commerce_price_formatted_amount';
-  $handler->display->display_options['fields']['commerce_price']['settings'] = array(
-    'calculation' => '0',
-  );
-  /* Field: Add to Cart button */
-  $handler->display->display_options['fields']['field_publication_product']['id'] = 'field_publication_product';
-  $handler->display->display_options['fields']['field_publication_product']['table'] = 'field_data_field_publication_product';
-  $handler->display->display_options['fields']['field_publication_product']['field'] = 'field_publication_product';
-  $handler->display->display_options['fields']['field_publication_product']['ui_name'] = 'Add to Cart button';
-  $handler->display->display_options['fields']['field_publication_product']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_product']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_product']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_product']['settings'] = array(
-    'show_quantity' => 0,
-    'default_quantity' => '1',
-    'combine' => 1,
-    'line_item_type' => 0,
-  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'delete or fix at some point';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1084,13 +1028,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'osu_catalog_publication' => 'osu_catalog_publication',
   );
-  /* Filter criterion: Commerce Product: Price (commerce_price:amount) */
-  $handler->display->display_options['filters']['commerce_price_amount']['id'] = 'commerce_price_amount';
-  $handler->display->display_options['filters']['commerce_price_amount']['table'] = 'field_data_commerce_price';
-  $handler->display->display_options['filters']['commerce_price_amount']['field'] = 'commerce_price_amount';
-  $handler->display->display_options['filters']['commerce_price_amount']['relationship'] = 'field_publication_product_product_id';
-  $handler->display->display_options['filters']['commerce_price_amount']['operator'] = '>';
-  $handler->display->display_options['filters']['commerce_price_amount']['value']['value'] = '0.00';
 
   /* Display: New Releases */
   $handler = $view->new_display('block', 'New Releases', 'block_1');
@@ -1137,18 +1074,13 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['class'] = 'pub-list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Cover image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
   $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
   $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'pub_list_thumbnail',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Series number */
+  /* Field: Field: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
   $handler->display->display_options['fields']['field_series_number']['field'] = 'field_series_number';

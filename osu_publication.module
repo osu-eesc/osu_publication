@@ -10,7 +10,6 @@ include_once('osu_publication.features.inc');
  */
 // function osu_publication_init() {
 //   drupal_add_css(drupal_get_path('module', 'osu_publication') . '/commerce_styles.css');
-//   drupal_add_css(drupal_get_path('module', 'osu_publication') . '/osu_publication_layout.css');
 //   drupal_add_js(drupal_get_path('module', 'osu_publication') . '/osu_publication.js');
 // }
 
@@ -29,10 +28,11 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id){
   }
 
   if ($form_id == 'osu_catalog_publication_node_form') { 
-
+    //dpm($form, 'form');
+    //dpm($form_state, 'form state');
     // don't change existing value
-    if ($form['field_series_number']['und'][0]['value']['#default_value'] == '') {
-
+    //if ($form['field_series_number']['und'][0]['value']['#default_value'] == '') {
+    if (empty($form['nid']['#value']) && empty($form['field_series_number']['und'][0]['value']['#default_value'])) {
       $form['field_series_prefix'] = array(
         '#title' => t('Series prefix'),
         '#type' => 'select',
@@ -45,13 +45,14 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id){
 
       $nextseriesnum = '';
 
-      if (!empty($form_state['values']['field_series_prefix'])) {
+      if (empty($form['nid']['#value']) && !empty($form_state['values']['field_series_prefix']) ) {
         // pass arg to view to get the highest series number
         $args[0] = $form_state['values']['field_series_prefix'];
         $view = views_get_view('suggest_series_number');
         $display_id = 'nextseriesnumber';
         $view->set_display($display_id);
         $view->execute_display($display_id, $args);
+
         $results = $view->result;
         $nextseriesnum = $results[0]->field_data_field_series_number_field_series_number_value + 1;
       }
