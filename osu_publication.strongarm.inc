@@ -135,6 +135,9 @@ function osu_publication_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -142,32 +145,48 @@ function osu_publication_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '19',
+            'weight' => '28',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '4',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '20',
+            'weight' => '29',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
           ),
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '8',
-            'visible' => TRUE,
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
           ),
         ),
         'product:field_cost' => array(
@@ -190,13 +209,21 @@ function osu_publication_strongarm() {
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '18',
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '26',
             'visible' => FALSE,
           ),
         ),
-        'product:field_cover_image' => array(
+        'project_series_date_length_entity_view_1' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
             'visible' => TRUE,
           ),
         ),
@@ -323,7 +350,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_osu_catalog_publication_pattern';
-  $strongarm->value = '[node:title]';
+  $strongarm->value = '[node:field-series-prefix][node:field-series-number][node:field-series-suffix]';
   $export['pathauto_node_osu_catalog_publication_pattern'] = $strongarm;
 
   return $export;

@@ -67,8 +67,8 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 0,
-        1 => 1,
+        0 => '',
+        1 => '',
       ),
       'allowed_values_function' => '',
     ),
@@ -474,10 +474,10 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'online' => 'Online',
-        'preview' => 'Preview',
-        'print_on_demand' => 'Print-on-demand',
-        'print' => 'Print',
+        1 => 'Online',
+        2 => 'Preview',
+        3 => 'Print-on-demand',
+        4 => 'Print',
       ),
       'allowed_values_function' => '',
     ),
@@ -502,42 +502,13 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'new' => 'New',
-        'revised' => 'Revised',
+        1 => 'Published',
+        2 => 'Revised',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_product_reference'
-  $field_bases['field_product_reference'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_product_reference',
-    'foreign keys' => array(
-      'product_id' => array(
-        'columns' => array(
-          'product_id' => 'product_id',
-        ),
-        'table' => 'commerce_product',
-      ),
-    ),
-    'indexes' => array(
-      'product_id' => array(
-        0 => 'product_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'commerce_product_reference',
-    'settings' => array(
-      'options_list_limit' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_program_area'
@@ -596,9 +567,12 @@ function osu_publication_field_default_field_bases() {
         2 => 'Ariel Ginsburg',
         3 => 'Tamara Hill-Tanquist',
         4 => 'Jeff Hino',
-        5 => 'Dio Morales',
-        6 => 'Jim Sloan',
-        7 => 'Tiffany Woods',
+        5 => 'Bryan Mayjor',
+        6 => 'Dio Morales',
+        7 => 'Erik Simmons',
+        8 => 'Jim Sloan',
+        9 => 'Stephen Ward',
+        10 => 'Tiffany Woods',
       ),
       'allowed_values_function' => '',
     ),
@@ -662,6 +636,35 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_publication_product'
+  $field_bases['field_publication_product'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_product',
+    'foreign keys' => array(
+      'product_id' => array(
+        'columns' => array(
+          'product_id' => 'product_id',
+        ),
+        'table' => 'commerce_product',
+      ),
+    ),
+    'indexes' => array(
+      'product_id' => array(
+        0 => 'product_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'commerce_product_reference',
+    'settings' => array(
+      'options_list_limit' => NULL,
+    ),
+    'translatable' => 0,
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_publication_sku'
@@ -728,6 +731,36 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_publication_thumbnail'
+  $field_bases['field_publication_thumbnail'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_publication_thumbnail',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_review_notes'
@@ -820,21 +853,21 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Blank' => 'Blank',
-        '4-H' => '4-H',
-        'DVD' => 'DVD',
-        'EESC' => 'EESC',
-        'EM' => 'EM',
-        'EC' => 'EC',
-        'FG' => 'FG',
-        'FS' => 'FS',
-        'Manual' => 'Manual',
-        'PNW' => 'PNW',
-        'SR' => 'SR',
-        'Weed' => 'Weed',
-        'Insect' => 'Insect',
-        'Plant' => 'Plant',
-        'WREP' => 'WREP',
+        0 => 'Blank',
+        1 => '4-H',
+        2 => 'DVD',
+        3 => 'EESC',
+        4 => 'EM',
+        5 => 'EC',
+        6 => 'FG',
+        7 => 'FS',
+        8 => 'Manual',
+        9 => 'PNW',
+        10 => 'SR',
+        11 => 'Weed',
+        12 => 'Insect',
+        13 => 'Plant',
+        14 => 'WREP',
       ),
       'allowed_values_function' => '',
     ),
