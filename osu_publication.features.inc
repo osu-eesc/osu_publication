@@ -93,6 +93,22 @@ function osu_publication_image_default_styles() {
  */
 function osu_publication_node_info() {
   $items = array(
+    'account_type' => array(
+      'name' => t('Account Types'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Account name'),
+      'help' => '',
+    ),
+    'estimates_expenses' => array(
+      'name' => t('Estimates and Expenses'),
+      'base' => 'node_content',
+      'description' => t('Enter a brief title for this expense.'),
+      'has_title' => '1',
+      'title_label' => t('Estimate title'),
+      'help' => '',
+    ),
     'osu_catalog_publication' => array(
       'name' => t('Project'),
       'base' => 'node_content',

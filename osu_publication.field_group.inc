@@ -51,35 +51,6 @@ function osu_publication_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_deprecated_fields|node|osu_catalog_publication|form';
-  $field_group->group_name = 'group_deprecated_fields';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'osu_catalog_publication';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Deprecated fields',
-    'weight' => '8',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_assets',
-      2 => 'field_author',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_deprecated_fields|node|osu_catalog_publication|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_estimates|node|osu_catalog_publication|form';
   $field_group->group_name = 'group_estimates';
   $field_group->entity_type = 'node';
@@ -91,6 +62,9 @@ function osu_publication_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_account_type',
+      1 => 'field_estimates_expense_notes',
+      2 => 'field_print_specs',
+      3 => 'field_expenses_node_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -185,9 +159,8 @@ function osu_publication_field_group_info() {
       3 => 'field_eesc_produced_purchased',
       4 => 'field_review_notes',
       5 => 'field_mode_of_delivery',
-      6 => 'field_publication_sku',
-      7 => 'field_add_to_store',
-      8 => 'field_publication_product',
+      6 => 'field_add_to_store',
+      7 => 'field_publication_product',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

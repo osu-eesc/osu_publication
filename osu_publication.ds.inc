@@ -16,33 +16,38 @@ function osu_publication_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'osu_catalog_publication';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'left' => array(
         0 => 'field_publication_thumbnail',
+      ),
+      'right' => array(
         1 => 'title',
         2 => 'field_author_reference',
         3 => 'field_publication_description',
-        4 => 'project_series_date_length_entity_view_1',
-        5 => 'product:commerce_price',
-        6 => 'field_publication_product',
-        7 => 'field_supplemental_file',
+        4 => 'field_alt_series_number',
+        5 => 'field_date_reviewed',
+        6 => 'product:commerce_price',
+        7 => 'field_publication_product',
+        8 => 'field_supplemental_file',
       ),
     ),
     'fields' => array(
-      'field_publication_thumbnail' => 'ds_content',
-      'title' => 'ds_content',
-      'field_author_reference' => 'ds_content',
-      'field_publication_description' => 'ds_content',
-      'project_series_date_length_entity_view_1' => 'ds_content',
-      'product:commerce_price' => 'ds_content',
-      'field_publication_product' => 'ds_content',
-      'field_supplemental_file' => 'ds_content',
+      'field_publication_thumbnail' => 'left',
+      'title' => 'right',
+      'field_author_reference' => 'right',
+      'field_publication_description' => 'right',
+      'field_alt_series_number' => 'right',
+      'field_date_reviewed' => 'right',
+      'product:commerce_price' => 'right',
+      'field_publication_product' => 'right',
+      'field_supplemental_file' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
