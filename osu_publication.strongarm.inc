@@ -13,48 +13,6 @@ function osu_publication_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_node_osu_catalog_publication';
-  $strongarm->value = '0';
-  $export['auto_entitylabel_node_osu_catalog_publication'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_node_publication_author';
-  $strongarm->value = '1';
-  $export['auto_entitylabel_node_publication_author'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_pattern_node_osu_catalog_publication';
-  $strongarm->value = '[node:field-series-prefix] [node:field_series_number][node:field-series-suffix]';
-  $export['auto_entitylabel_pattern_node_osu_catalog_publication'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_pattern_node_publication_author';
-  $strongarm->value = '[node:field_first_name] [node:field-last-name]';
-  $export['auto_entitylabel_pattern_node_publication_author'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_php_node_osu_catalog_publication';
-  $strongarm->value = 0;
-  $export['auto_entitylabel_php_node_osu_catalog_publication'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_php_node_publication_author';
-  $strongarm->value = 0;
-  $export['auto_entitylabel_php_node_publication_author'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_osu_catalog_publication';
   $strongarm->value = 0;
   $export['comment_anonymous_osu_catalog_publication'] = $strongarm;
@@ -593,7 +551,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_osu_catalog_publication';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_osu_catalog_publication'] = $strongarm;
 
   $strongarm = new stdClass();

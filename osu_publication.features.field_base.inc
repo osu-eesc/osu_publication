@@ -311,6 +311,32 @@ function osu_publication_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_estimate_or_actual'
+  $field_bases['field_estimate_or_actual'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_estimate_or_actual',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'Estimate',
+        2 => 'Actual',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_estimates_expense_notes'
   $field_bases['field_estimates_expense_notes'] = array(
     'active' => 1,
@@ -336,32 +362,6 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_estmate_or_actual'
-  $field_bases['field_estmate_or_actual'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_estmate_or_actual',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 'Estimate',
-        2 => 'Actual',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_expense_amount'

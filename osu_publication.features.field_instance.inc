@@ -50,19 +50,19 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-estimates_expenses-field_estmate_or_actual'
-  $field_instances['node-estimates_expenses-field_estmate_or_actual'] = array(
+  // Exported field_instance: 'node-estimates_expenses-field_estimate_or_actual'
+  $field_instances['node-estimates_expenses-field_estimate_or_actual'] = array(
     'bundle' => 'estimates_expenses',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select whether this is an estimate or actual expense.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -72,9 +72,9 @@ function osu_publication_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_estmate_or_actual',
-    'label' => 'Estmate or actual',
+    'fences_wrapper' => 'ul',
+    'field_name' => 'field_estimate_or_actual',
+    'label' => 'Estimate or actual',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -83,10 +83,10 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 1,
+        'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -128,7 +128,7 @@ function osu_publication_field_default_field_instances() {
         'currency_code' => 'default',
       ),
       'type' => 'commerce_price_full',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -182,7 +182,7 @@ function osu_publication_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -236,7 +236,7 @@ function osu_publication_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -277,7 +277,7 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1802,8 +1802,8 @@ function osu_publication_field_default_field_instances() {
 <em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
   t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes).');
   t('Enter the titles and links for supplemental files (e.g., individual chapters of a lengthy publication or podcasts that go with a written publication).');
+  t('Estimate or actual');
   t('Estimate/expense notes');
-  t('Estmate or actual');
   t('Expense types');
   t('First name');
   t('General notes');

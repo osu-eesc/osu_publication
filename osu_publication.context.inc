@@ -113,7 +113,7 @@ function osu_publication_context_default_contexts() {
           'module' => 'views',
           'delta' => 'estimates_expenses-block_1',
           'region' => 'content',
-          'weight' => '30',
+          'weight' => '31',
         ),
       ),
     ),
