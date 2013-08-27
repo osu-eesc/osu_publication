@@ -13,6 +13,41 @@ function osu_publication_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'author_page';
+  $context->description = 'Blocks for auhtor detail page';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'publication_author' => 'publication_author',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-osu_catalog_homepage-block_2' => array(
+          'module' => 'views',
+          'delta' => 'osu_catalog_homepage-block_2',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Blocks for auhtor detail page');
+  $export['author_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'default_page_blocks';
   $context->description = 'Blocks containing the menu and (hidden) publication related blocks';
   $context->tag = 'views, block';
@@ -54,6 +89,41 @@ function osu_publication_context_default_contexts() {
   t('Blocks containing the menu and (hidden) publication related blocks');
   t('views, block');
   $export['default_page_blocks'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'estimates_expenses_table';
+  $context->description = 'adds a table view to project node forms';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'osu_catalog_publication' => 'osu_catalog_publication',
+      ),
+      'options' => array(
+        'node_form' => '2',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-estimates_expenses-block_1' => array(
+          'module' => 'views',
+          'delta' => 'estimates_expenses-block_1',
+          'region' => 'content',
+          'weight' => '30',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('adds a table view to project node forms');
+  $export['estimates_expenses_table'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
