@@ -277,6 +277,201 @@ function osu_publication_views_default_views() {
   $export['catalog_taxonomies'] = $view;
 
   $view = new view();
+  $view->name = 'estimates_expenses';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Estimates and expenses';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_expense_amount' => 'field_expense_amount',
+    'field_expense_date' => 'field_expense_date',
+    'field_expense_types' => 'field_expense_types',
+    'field_expense_invoice_date' => 'field_expense_invoice_date',
+    'field_expense_invoice_number' => 'field_expense_invoice_number',
+    'edit_node' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_expense_date';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' - ',
+      'empty_column' => 0,
+    ),
+    'field_expense_amount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_expense_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_expense_types' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_expense_invoice_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_expense_invoice_number' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Expense title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = '[edit]';
+  /* Field: Content: Amount */
+  $handler->display->display_options['fields']['field_expense_amount']['id'] = 'field_expense_amount';
+  $handler->display->display_options['fields']['field_expense_amount']['table'] = 'field_data_field_expense_amount';
+  $handler->display->display_options['fields']['field_expense_amount']['field'] = 'field_expense_amount';
+  $handler->display->display_options['fields']['field_expense_amount']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_amount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_amount']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_amount']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_amount']['click_sort_column'] = 'amount';
+  $handler->display->display_options['fields']['field_expense_amount']['settings'] = array(
+    'calculation' => FALSE,
+  );
+  $handler->display->display_options['fields']['field_expense_amount']['field_api_classes'] = TRUE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_expense_date']['id'] = 'field_expense_date';
+  $handler->display->display_options['fields']['field_expense_date']['table'] = 'field_data_field_expense_date';
+  $handler->display->display_options['fields']['field_expense_date']['field'] = 'field_expense_date';
+  $handler->display->display_options['fields']['field_expense_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_date']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_date']['settings'] = array(
+    'format_type' => 'm_d_y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['fields']['field_expense_date']['field_api_classes'] = TRUE;
+  /* Field: Content: Expense types */
+  $handler->display->display_options['fields']['field_expense_types']['id'] = 'field_expense_types';
+  $handler->display->display_options['fields']['field_expense_types']['table'] = 'field_data_field_expense_types';
+  $handler->display->display_options['fields']['field_expense_types']['field'] = 'field_expense_types';
+  $handler->display->display_options['fields']['field_expense_types']['label'] = 'Expense type';
+  $handler->display->display_options['fields']['field_expense_types']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_types']['element_default_classes'] = FALSE;
+  /* Field: Content: Invoice date */
+  $handler->display->display_options['fields']['field_expense_invoice_date']['id'] = 'field_expense_invoice_date';
+  $handler->display->display_options['fields']['field_expense_invoice_date']['table'] = 'field_data_field_expense_invoice_date';
+  $handler->display->display_options['fields']['field_expense_invoice_date']['field'] = 'field_expense_invoice_date';
+  $handler->display->display_options['fields']['field_expense_invoice_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_invoice_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_invoice_date']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_invoice_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_invoice_date']['settings'] = array(
+    'format_type' => 'm_d_y',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['fields']['field_expense_invoice_date']['field_api_classes'] = TRUE;
+  /* Field: Content: Invoice number */
+  $handler->display->display_options['fields']['field_expense_invoice_number']['id'] = 'field_expense_invoice_number';
+  $handler->display->display_options['fields']['field_expense_invoice_number']['table'] = 'field_data_field_expense_invoice_number';
+  $handler->display->display_options['fields']['field_expense_invoice_number']['field'] = 'field_expense_invoice_number';
+  $handler->display->display_options['fields']['field_expense_invoice_number']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_invoice_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_invoice_number']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_expense_invoice_number']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_expense_invoice_number']['field_api_classes'] = TRUE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Project Reference (field_project_reference) */
+  $handler->display->display_options['arguments']['field_project_reference_nid']['id'] = 'field_project_reference_nid';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['table'] = 'field_data_field_project_reference';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['field'] = 'field_project_reference_nid';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_project_reference_nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'estimates_expenses' => 'estimates_expenses',
+  );
+
+  /* Display: Estimates and expenses */
+  $handler = $view->new_display('block', 'Estimates and expenses', 'block_1');
+  $handler->display->display_options['display_description'] = 'table view for project expsenses';
+
+  /* Display: EVA Field */
+  $handler = $view->new_display('entity_view', 'EVA Field', 'eva_estimate_expsenses');
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'osu_catalog_publication',
+  );
+  $export['estimates_expenses'] = $view;
+
+  $view = new view();
   $view->name = 'next_series_number';
   $view->description = 'returns the next series number using prefix argument';
   $view->tag = 'default';

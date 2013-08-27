@@ -195,6 +195,7 @@ features[variable][] = pathauto_taxonomy_term_pattern
 features[variable][] = pathauto_taxonomy_term_program_area_pattern
 features[views_view][] = accounts_list
 features[views_view][] = catalog_taxonomies
+features[views_view][] = estimates_expenses
 features[views_view][] = next_series_number
 features[views_view][] = osu_catalog_homepage
 features[views_view][] = osu_publication_taxonomy_term
