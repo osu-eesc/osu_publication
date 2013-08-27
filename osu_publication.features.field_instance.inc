@@ -1289,6 +1289,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'label_help_description' => 'the cover image',
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1700,9 +1701,8 @@ function osu_publication_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -1736,13 +1736,12 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'publication_author',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'this should really be on the top',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -1753,6 +1752,7 @@ function osu_publication_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_last_name',
     'label' => 'Last name',
     'required' => 1,
@@ -1847,6 +1847,7 @@ function osu_publication_field_default_field_instances() {
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');
   t('When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
+  t('this should really be on the top');
 
   return $field_instances;
 }

@@ -386,6 +386,12 @@ function osu_publication_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -556,8 +562,7 @@ function osu_publication_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_osu_catalog_publication';
   $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
+    0 => 'revision',
   );
   $export['node_options_osu_catalog_publication'] = $strongarm;
 
