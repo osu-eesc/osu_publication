@@ -948,12 +948,15 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_series_number']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_series_number']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_series_number']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_series_number']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -989,25 +992,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_topic']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_assets']['id'] = 'field_assets';
-  $handler->display->display_options['fields']['field_assets']['table'] = 'field_data_field_assets';
-  $handler->display->display_options['fields']['field_assets']['field'] = 'field_assets';
-  $handler->display->display_options['fields']['field_assets']['label'] = 'Title';
-  $handler->display->display_options['fields']['field_assets']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_assets']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_assets']['hide_alter_empty'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_assets_1']['id'] = 'field_assets_1';
-  $handler->display->display_options['fields']['field_assets_1']['table'] = 'field_data_field_assets';
-  $handler->display->display_options['fields']['field_assets_1']['field'] = 'field_assets';
-  $handler->display->display_options['fields']['field_assets_1']['label'] = 'View it now';
-  $handler->display->display_options['fields']['field_assets_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_assets_1']['alter']['text'] = 'View it now';
-  $handler->display->display_options['fields']['field_assets_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_assets_1']['alter']['path'] = '[field_assets_1-url]';
-  $handler->display->display_options['fields']['field_assets_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_assets_1']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1039,11 +1023,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'osu_catalog_publication' => 'osu_catalog_publication',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_assets_attributes']['id'] = 'field_assets_attributes';
-  $handler->display->display_options['filters']['field_assets_attributes']['table'] = 'field_data_field_assets';
-  $handler->display->display_options['filters']['field_assets_attributes']['field'] = 'field_assets_attributes';
-  $handler->display->display_options['filters']['field_assets_attributes']['operator'] = 'not empty';
 
   /* Display: Related Publications second term Attachment */
   $handler = $view->new_display('attachment', 'Related Publications second term Attachment', 'related_publications_block_second_term');
@@ -1079,6 +1058,10 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_series_number']['label'] = '';
   $handler->display->display_options['fields']['field_series_number']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_series_number']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_series_number']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
