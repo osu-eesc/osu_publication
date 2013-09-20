@@ -56,6 +56,7 @@ function osu_publication_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'publication_node',
   );
 
   // Exported image style: publication_thumbnail.
@@ -79,6 +80,7 @@ function osu_publication_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'publication_thumbnail',
   );
 
   return $styles;

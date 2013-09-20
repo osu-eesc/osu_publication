@@ -17,13 +17,13 @@ function osu_publication_conditional_fields_default_fields() {
     'dependee' => 'field_add_to_store',
     'options' => array(
       'state' => 'visible',
-      'condition' => 'checked',
+      'condition' => 'value',
       'grouping' => 'AND',
       'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
-        2 => 2,
+        2 => 0,
         5 => 0,
         3 => 0,
         4 => 0,
@@ -51,6 +51,13 @@ function osu_publication_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
         4 => array(
           1 => 1,
           2 => 2,
@@ -66,6 +73,20 @@ function osu_publication_conditional_fields_default_fields() {
           4 => 0,
         ),
         5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -91,6 +112,10 @@ function osu_publication_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
         4 => array(
           1 => 1,
           3 => 0,
@@ -103,12 +128,24 @@ function osu_publication_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value' => array(),
+      'value_form' => 1,
+      'value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
       'values' => array(),
-      'value_form' => array(),
     ),
   );
 
