@@ -64,7 +64,6 @@ function osu_publication_field_group_info() {
       0 => 'field_account_type',
       1 => 'field_estimates_expense_notes',
       2 => 'field_print_specs',
-      3 => 'field_expenses_node_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -127,6 +126,7 @@ function osu_publication_field_group_info() {
       0 => 'field_companion_resources',
       1 => 'field_scholars_archive_url',
       2 => 'field_supplemental_file',
+      3 => 'field_preview_file',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

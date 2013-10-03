@@ -38,8 +38,9 @@ function osu_publication_image_default_styles() {
   // Exported image style: publication_node.
   $styles['publication_node'] = array(
     'name' => 'publication_node',
+    'label' => 'publication_node',
     'effects' => array(
-      2 => array(
+      3 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -49,14 +50,13 @@ function osu_publication_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 400,
+          'width' => 300,
           'height' => 400,
           'upscale' => 0,
         ),
         'weight' => 1,
       ),
     ),
-    'label' => 'publication_node',
   );
 
   // Exported image style: publication_thumbnail.

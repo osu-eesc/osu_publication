@@ -29,9 +29,9 @@ function osu_publication_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-osu_catalog_homepage-block_2' => array(
+        'views-dae3f92f04661bbe1517fc2749c43920' => array(
           'module' => 'views',
-          'delta' => 'osu_catalog_homepage-block_2',
+          'delta' => 'dae3f92f04661bbe1517fc2749c43920',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -208,6 +208,12 @@ function osu_publication_context_default_contexts() {
           'delta' => '2b1aa38a02a6653b7084d8c4e3d325d2',
           'region' => 'sidebar_first',
           'weight' => '-10',
+        ),
+        'ask_expert-ask_expert' => array(
+          'module' => 'ask_expert',
+          'delta' => 'ask_expert',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
         ),
       ),
     ),

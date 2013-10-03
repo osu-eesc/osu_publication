@@ -275,7 +275,7 @@ function osu_publication_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '29',
+            'weight' => '30',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -285,7 +285,7 @@ function osu_publication_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '30',
+            'weight' => '31',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -305,7 +305,7 @@ function osu_publication_strongarm() {
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '22',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -321,7 +321,7 @@ function osu_publication_strongarm() {
         ),
         'product:field_cost_per_copy' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '16',
             'visible' => FALSE,
           ),
         ),
@@ -333,7 +333,7 @@ function osu_publication_strongarm() {
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '28',
+            'weight' => '29',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -344,7 +344,7 @@ function osu_publication_strongarm() {
         'project_series_date_length_entity_view_1' => array(
           'default' => array(
             'weight' => '4',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'teaser' => array(
             'weight' => '10',
@@ -354,6 +354,12 @@ function osu_publication_strongarm() {
         'estimates_expenses_entity_view_1' => array(
           'default' => array(
             'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+        'estimates_expenses_eva_estimate_expsenses' => array(
+          'default' => array(
+            'weight' => '15',
             'visible' => FALSE,
           ),
         ),
@@ -663,21 +669,21 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_publication_author_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'author/[node:title]';
   $export['pathauto_node_publication_author_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_osu_catalog_media_type_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'media-type/[term:root:name]/[term:name]';
   $export['pathauto_taxonomy_term_osu_catalog_media_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_osu_catalog_topic_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'topic/[term:root:name]/[term:name]';
   $export['pathauto_taxonomy_term_osu_catalog_topic_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -691,7 +697,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_program_area_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'program/[term:root:name]/[term:name]';
   $export['pathauto_taxonomy_term_program_area_pattern'] = $strongarm;
 
   return $export;
