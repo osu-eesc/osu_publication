@@ -40,13 +40,49 @@ function osu_publication_field_group_info() {
       'label' => 'Project information',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-basic field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',
     ),
   );
   $export['group_basic|node|osu_catalog_publication|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_estimate_expenses|node|estimates_expenses|form';
+  $field_group->group_name = 'group_estimate_expenses';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'estimates_expenses';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Estimates and Expenses',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_expense_types',
+      1 => 'field_estmate_or_actual',
+      2 => 'field_expense_amount',
+      3 => 'field_expense_date',
+      4 => 'field_expense_invoice_number',
+      5 => 'field_expense_invoice_date',
+      6 => 'field_project_reference',
+      7 => 'field_estimate_or_actual',
+      8 => 'title',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Estimates and Expenses',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => ' group-estimate-expenses field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_estimate_expenses|node|estimates_expenses|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -59,7 +95,7 @@ function osu_publication_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Estimates, expenses, and production',
-    'weight' => '6',
+    'weight' => '4',
     'children' => array(
       0 => 'field_account_type',
       1 => 'field_estimates_expense_notes',
@@ -70,7 +106,7 @@ function osu_publication_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-estimates field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -102,13 +138,40 @@ function osu_publication_field_group_info() {
       'label' => 'Project admin',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-general field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',
     ),
   );
   $export['group_general|node|osu_catalog_publication|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_html|node|osu_catalog_publication|form';
+  $field_group->group_name = 'group_html';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'osu_catalog_publication';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'HTML',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_html_output',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-html field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_html|node|osu_catalog_publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -121,19 +184,24 @@ function osu_publication_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links and companion projects',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_companion_resources',
-      1 => 'field_scholars_archive_url',
-      2 => 'field_supplemental_file',
-      3 => 'field_preview_file',
+      1 => 'field_preview_file',
+      2 => 'field_link_or_upload',
+      3 => 'field_catman_link',
+      4 => 'field_supplemental_file',
+      5 => 'field_supplemental_link',
+      6 => 'field_epub_file',
+      7 => 'field_pdf_file',
+      8 => 'field_excel_file',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-links field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -167,7 +235,7 @@ function osu_publication_field_group_info() {
       'label' => 'Publishing information',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-publishing field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',

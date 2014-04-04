@@ -248,10 +248,10 @@ function osu_publication_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -260,6 +260,9 @@ function osu_publication_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print_friendly' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -271,25 +274,52 @@ function osu_publication_strongarm() {
         'path' => array(
           'weight' => '7',
         ),
+        'redirect' => array(
+          'weight' => '8',
+        ),
       ),
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '30',
+            'weight' => '35',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '4',
+            'weight' => '24',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '33',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '34',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '31',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '25',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '31',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '34',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '35',
             'visible' => FALSE,
           ),
         ),
@@ -299,17 +329,41 @@ function osu_publication_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '1',
+            'weight' => '22',
             'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '15',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '23',
+            'weight' => '29',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '3',
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '26',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '28',
             'visible' => FALSE,
           ),
         ),
@@ -318,10 +372,38 @@ function osu_publication_strongarm() {
             'weight' => '7',
             'visible' => TRUE,
           ),
+          'search_index' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
         ),
         'product:field_cost_per_copy' => array(
           'default' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
             'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '19',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '27',
             'visible' => FALSE,
           ),
         ),
@@ -330,24 +412,60 @@ function osu_publication_strongarm() {
             'weight' => '13',
             'visible' => TRUE,
           ),
+          'search_index' => array(
+            'weight' => '13',
+            'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '13',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '13',
+            'visible' => TRUE,
+          ),
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '29',
+            'weight' => '34',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '26',
+            'weight' => '46',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '29',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '32',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '33',
             'visible' => FALSE,
           ),
         ),
         'project_series_date_length_entity_view_1' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
           ),
           'teaser' => array(
             'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'search_index' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '5',
             'visible' => TRUE,
           ),
         ),
@@ -356,10 +474,94 @@ function osu_publication_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'search_index' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'token' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'estimates_expenses_eva_estimate_expsenses' => array(
           'default' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
             'weight' => '15',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '18',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+        'project_series_date_length_eva_links' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
+        ),
+        'project_series_date_length_formatted_series_number' => array(
+          'default' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'token' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'pdf_files_entity_view_1' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'token' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'project_series_date_length_eva_supplemental' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '31',
             'visible' => FALSE,
           ),
         ),
@@ -397,6 +599,9 @@ function osu_publication_strongarm() {
       ),
       'revision' => array(
         'custom_settings' => FALSE,
+      ),
+      'print_friendly' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -559,7 +764,6 @@ function osu_publication_strongarm() {
   $strongarm->name = 'node_options_estimates_expenses';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
   );
   $export['node_options_estimates_expenses'] = $strongarm;
 
@@ -567,9 +771,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_osu_catalog_publication';
-  $strongarm->value = array(
-    0 => 'revision',
-  );
+  $strongarm->value = array();
   $export['node_options_osu_catalog_publication'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -655,7 +857,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_osu_catalog_publication_pattern';
-  $strongarm->value = '[node:field-series-prefix][node:field-series-number][node:field-series-suffix]';
+  $strongarm->value = '[node:field_series_prefix][node:field-series-number][node:field-series-suffix]';
   $export['pathauto_node_osu_catalog_publication_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

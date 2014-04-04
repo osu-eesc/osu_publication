@@ -68,8 +68,8 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => '',
+        0 => 0,
+        1 => 1,
       ),
       'allowed_values_function' => '',
     ),
@@ -158,6 +158,7 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'account_type' => 0,
+        'estimates_expenses' => 0,
         'osu_catalog_publication' => 0,
         'page' => 0,
         'publication_author' => 'publication_author',
@@ -171,6 +172,36 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_catman_link'
+  $field_bases['field_catman_link'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_catman_link',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
   );
 
   // Exported field_base: 'field_companion_resources'
@@ -269,7 +300,7 @@ function osu_publication_field_default_field_bases() {
       'cache_count' => 4,
       'cache_enabled' => 0,
       'granularity' => array(
-        'day' => 'day',
+        'day' => 0,
         'hour' => 0,
         'minute' => 0,
         'month' => 'month',
@@ -309,6 +340,37 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_epub_file'
+  $field_bases['field_epub_file'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_epub_file',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_estimate_or_actual'
@@ -362,6 +424,37 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_excel_file'
+  $field_bases['field_excel_file'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_excel_file',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_expense_amount'
@@ -557,6 +650,33 @@ function osu_publication_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_html_output'
+  $field_bases['field_html_output'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_html_output',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_index_code'
   $field_bases['field_index_code'] = array(
     'active' => 1,
@@ -642,6 +762,32 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_link_or_upload'
+  $field_bases['field_link_or_upload'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_link_or_upload',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'file upload',
+        1 => 'permanent link',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_media_type'
@@ -730,6 +876,37 @@ function osu_publication_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_pdf_file'
+  $field_bases['field_pdf_file'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pdf_file',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_preview_file'
@@ -981,7 +1158,7 @@ function osu_publication_field_default_field_bases() {
     'locked' => 0,
     'module' => 'commerce_product_reference',
     'settings' => array(
-      'options_list_limit' => NULL,
+      'options_list_limit' => '',
     ),
     'translatable' => 0,
     'type' => 'commerce_product_reference',
@@ -1081,36 +1258,6 @@ function osu_publication_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_scholars_archive_url'
-  $field_bases['field_scholars_archive_url'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_scholars_archive_url',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_series_number'
   $field_bases['field_series_number'] = array(
     'active' => 1,
@@ -1144,21 +1291,24 @@ function osu_publication_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Blank',
-        1 => '4-H',
-        2 => 'DVD',
-        3 => 'EESC',
-        4 => 'EM',
-        5 => 'EC',
-        6 => 'FG',
-        7 => 'FS',
-        8 => 'Manual',
-        9 => 'PNW',
-        10 => 'SR',
-        11 => 'Weed',
-        12 => 'Insect',
-        13 => 'Plant',
-        14 => 'WREP',
+        'blank' => 'Blank',
+        '4h' => '4-H',
+        'dvd' => 'DVD',
+        'eesc' => 'EESC',
+        'em' => 'EM',
+        'ec' => 'EC',
+        'fg' => 'FG',
+        'fs' => 'FS',
+        'manual' => 'Manual',
+        'pnw' => 'PNW',
+        'sr' => 'SR',
+        'weed' => 'Weed',
+        'insect' => 'Insect',
+        'plant3' => 'Plant',
+        'silv' => 'SILV',
+        'sb' => 'SB',
+        'sp' => 'SP',
+        'tb' => 'TB',
       ),
       'allowed_values_function' => '',
     ),
@@ -1232,6 +1382,37 @@ function osu_publication_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_supplemental_file',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
+  // Exported field_base: 'field_supplemental_link'
+  $field_bases['field_supplemental_link'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_supplemental_link',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,

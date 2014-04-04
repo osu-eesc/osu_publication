@@ -374,13 +374,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 31,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 26,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 29,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
     ),
     'entity_type' => 'node',
@@ -395,7 +419,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 46,
@@ -417,13 +441,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 30,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 25,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 33,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
     ),
     'entity_type' => 'node',
@@ -459,11 +507,37 @@ function osu_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 36,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -500,14 +574,41 @@ function osu_publication_field_default_field_instances() {
         'type' => 'node_reference_default',
         'weight' => 2,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_plain',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 42,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'ul',
     'field_name' => 'field_author_reference',
     'label' => 'Authors',
     'required' => 0,
@@ -527,6 +628,79 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_catman_link'
+  $field_instances['node-osu_catalog_publication-field_catman_link'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the permanent link for the item.<br>
+<em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_catman_link',
+    'label' => 'Catman link',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'rel_remove_internal',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => 'View online',
+      'url' => 'optional',
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 49,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_companion_resources'
   $field_instances['node-osu_catalog_publication-field_companion_resources'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -538,13 +712,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 44,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 41,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 44,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 50,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 44,
       ),
     ),
     'entity_type' => 'node',
@@ -564,7 +762,7 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 63,
+      'weight' => 56,
     ),
   );
 
@@ -579,13 +777,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 41,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 37,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 40,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 37,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
       ),
     ),
     'entity_type' => 'node',
@@ -627,11 +849,43 @@ function osu_publication_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 6,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 51,
+      ),
+      'token' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'full_month_year',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -640,7 +894,7 @@ function osu_publication_field_default_field_instances() {
     'label' => 'Date reviewed',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'blank',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -651,11 +905,11 @@ function osu_publication_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 1,
-        'input_format' => 'Y-m-d H:i:s',
+        'input_format' => 'm/d/Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-6:+3',
       ),
       'type' => 'date_popup',
       'weight' => 57,
@@ -673,13 +927,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 39,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 35,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 44,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 39,
       ),
     ),
     'entity_type' => 'node',
@@ -694,10 +972,89 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 53,
+    ),
+  );
+
+  // Exported field_instance: 'node-osu_catalog_publication-field_epub_file'
+  $field_instances['node-osu_catalog_publication-field_epub_file'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_epub_file',
+    'label' => 'ePub file upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'epub',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => '[node:field-series-prefix][node:field-series-number][node:field-series-suffix].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => 'project/epub',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 51,
     ),
   );
 
@@ -712,13 +1069,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 45,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 42,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 45,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 45,
       ),
     ),
     'entity_type' => 'node',
@@ -741,6 +1122,79 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_excel_file'
+  $field_instances['node-osu_catalog_publication-field_excel_file'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_excel_file',
+    'label' => 'Excel file upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'xls xlsx csv',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => '[node:field-series-prefix][node:field-series-number][node:field-series-suffix].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => 'project/excel',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 53,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_general_notes'
   $field_instances['node-osu_catalog_publication-field_general_notes'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -753,13 +1207,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 37,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 33,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 39,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
     ),
     'entity_type' => 'node',
@@ -782,6 +1260,64 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_html_output'
+  $field_instances['node-osu_catalog_publication-field_html_output'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 49,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 49,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_html_output',
+    'label' => 'HTML version',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 59,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_length'
   $field_instances['node-osu_catalog_publication-field_length'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -793,13 +1329,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 28,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 22,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 49,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
     ),
     'entity_type' => 'node',
@@ -822,6 +1382,63 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_link_or_upload'
+  $field_instances['node-osu_catalog_publication-field_link_or_upload'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
+Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
+<strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 48,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 48,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_link_or_upload',
+    'label' => 'Link or file upload?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 48,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_media_type'
   $field_instances['node-osu_catalog_publication-field_media_type'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -833,13 +1450,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 42,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 39,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 47,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 42,
       ),
     ),
     'entity_type' => 'node',
@@ -871,13 +1512,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 38,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 41,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 28,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -908,13 +1573,38 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 26,
       ),
-      'teaser' => array(
-        'label' => 'above',
+      'search_index' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 20,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'node',
@@ -929,10 +1619,83 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 55,
+    ),
+  );
+
+  // Exported field_instance: 'node-osu_catalog_publication-field_pdf_file'
+  $field_instances['node-osu_catalog_publication-field_pdf_file'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_pdf_file',
+    'label' => 'PDF file upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'pdf',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => '[node:field-series-prefix][node:field-series-number][node:field-series-suffix].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => 'project/pdf',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 50,
     ),
   );
 
@@ -946,24 +1709,67 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 47,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 44,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 47,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 47,
       ),
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_preview_file',
-    'label' => 'Preview',
+    'label' => 'Preview file upload',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'preview_files',
       'file_extensions' => 'pdf',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => '[node:field-series-prefix][node:field-series-number][node:field-series-suffix].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => 'project/preview',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -974,7 +1780,7 @@ function osu_publication_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 61,
+      'weight' => 52,
     ),
   );
 
@@ -989,13 +1795,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 46,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 43,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 46,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 46,
       ),
     ),
     'entity_type' => 'node',
@@ -1029,13 +1859,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 32,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 27,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 32,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
     ),
     'entity_type' => 'node',
@@ -1071,13 +1925,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 36,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 32,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 40,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
     ),
     'entity_type' => 'node',
@@ -1092,7 +1970,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 32,
@@ -1109,13 +1987,45 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 27,
       ),
-      'teaser' => array(
+      'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 21,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short_month_year',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
     ),
     'entity_type' => 'node',
@@ -1160,11 +2070,37 @@ function osu_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 45,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -1202,19 +2138,52 @@ function osu_publication_field_default_field_instances() {
           'default_quantity' => 1,
           'line_item_type' => 0,
           'show_quantity' => 1,
-          'show_single_product_attributes' => 1,
+          'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 8,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 52,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => 1,
+          'default_quantity' => 1,
+          'line_item_type' => 0,
+          'show_quantity' => 0,
+          'show_single_product_attributes' => 0,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_publication_product',
     'label' => 'Product',
     'required' => 0,
@@ -1229,11 +2198,16 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'inline_entity_form',
       'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'commerce_product/autocomplete',
         'fields' => array(),
-        'size' => 60,
-        'type_settings' => array(),
+        'type_settings' => array(
+          'allow_existing' => FALSE,
+          'autogenerate_title' => 0,
+          'delete_references' => 1,
+          'label_plural' => 'products',
+          'label_singular' => 'product',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 0,
+        ),
       ),
       'type' => 'inline_entity_form_single',
       'weight' => 52,
@@ -1256,13 +2230,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 38,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 34,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 38,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
     ),
     'entity_type' => 'node',
@@ -1277,7 +2275,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 35,
@@ -1300,12 +2298,38 @@ function osu_publication_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'publication_thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'publication_thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'publication_node',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -1321,6 +2345,25 @@ function osu_publication_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'images/pubcovers',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -1331,7 +2374,8 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'label_help_description' => 'the cover image',
+        'file_entity_inline' => 0,
+        'file_entity_inline_fields' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1351,13 +2395,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 40,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 36,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 35,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
       ),
     ),
     'entity_type' => 'node',
@@ -1380,61 +2448,6 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-osu_catalog_publication-field_scholars_archive_url'
-  $field_instances['node-osu_catalog_publication-field_scholars_archive_url'] = array(
-    'bundle' => 'osu_catalog_publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter the permanent link for the item.<br>
-<em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_scholars_archive_url',
-    'label' => 'Permanent link',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 60,
-    ),
-  );
-
   // Exported field_instance: 'node-osu_catalog_publication-field_series_number'
   $field_instances['node-osu_catalog_publication-field_series_number'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -1447,13 +2460,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 24,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 18,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 26,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
     ),
     'entity_type' => 'node',
@@ -1488,13 +2525,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 23,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 17,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 41,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'node',
@@ -1509,7 +2570,7 @@ function osu_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 2,
@@ -1528,13 +2589,37 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 25,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 19,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 43,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'node',
@@ -1567,13 +2652,38 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 33,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 28,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 34,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
     ),
     'entity_type' => 'node',
@@ -1606,33 +2716,131 @@ function osu_publication_field_default_field_instances() {
   // Exported field_instance: 'node-osu_catalog_publication-field_supplemental_file'
   $field_instances['node-osu_catalog_publication-field_supplemental_file'] = array(
     'bundle' => 'osu_catalog_publication',
-    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the titles and links for supplemental files (e.g., individual chapters of a lengthy publication or podcasts that go with a written publication).',
+    'description' => 'If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 12,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_supplemental_file',
-    'label' => 'Supplemental files',
+    'label' => 'Supplemental content',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'pdf mp3',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 1,
+            'transliterate' => 1,
+          ),
+          'value' => 'project/supplemental/[node:field-series-prefix][node:field-series-number][node:field-series-suffix]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 54,
+    ),
+  );
+
+  // Exported field_instance: 'node-osu_catalog_publication-field_supplemental_link'
+  $field_instances['node-osu_catalog_publication-field_supplemental_link'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'TODO: Add help text',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 50,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 50,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_supplemental_link',
+    'label' => 'Supplemental link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
-        'rel' => '',
+        'rel' => 'nofollow',
         'target' => 'default',
         'title' => '',
       ),
@@ -1641,7 +2849,7 @@ function osu_publication_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'required',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1653,7 +2861,7 @@ function osu_publication_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 62,
+      'weight' => 55,
     ),
   );
 
@@ -1668,13 +2876,38 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 43,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'hs_taxonomy',
+        'settings' => array(),
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
         'weight' => 40,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 48,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 43,
       ),
     ),
     'entity_type' => 'node',
@@ -1815,11 +3048,15 @@ function osu_publication_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
+Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
+<strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />');
   t('Account');
   t('Add to store');
   t('Alt series number');
   t('Amount');
   t('Authors');
+  t('Catman link');
   t('Choose the series prefix (such as EM, PNW, etc.)');
   t('Companion projects');
   t('Corresponding author');
@@ -1843,12 +3080,14 @@ function osu_publication_field_default_field_instances() {
   t('Enter the permanent link for the item.<br>
 <em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
   t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes).');
-  t('Enter the titles and links for supplemental files (e.g., individual chapters of a lengthy publication or podcasts that go with a written publication).');
   t('Estimate or actual');
   t('Estimate/expense notes');
+  t('Excel file upload');
   t('Expense types');
   t('First name');
   t('General notes');
+  t('HTML version');
+  t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).');
   t('If this item will be available to order throgh the Catalog, check this box and then fill out the necessary cost and inventory fields. For SKU, enter the entire series number (e.g., EM 1234-S). For cost and price, enter values with decimal places but without dollar signs (e.g., 1.50 for $1.50).');
   t('If this project has two series numbers (e.g., a 4-H number and a PNW number), enter the alternate series number here.<br><em>Note: For Oregon 4-H publications, the 4-H series number is the primary series number, and the PNW number is the alternate series number.</em>');
   t('Index and activity code');
@@ -1856,12 +3095,13 @@ function osu_publication_field_default_field_instances() {
   t('Invoice number');
   t('Last name');
   t('Length');
+  t('Link or file upload?');
   t('Media type');
   t('Mode of delivery');
   t('New or revised');
   t('Notes');
-  t('Permanent link');
-  t('Preview');
+  t('PDF file upload');
+  t('Preview file upload');
   t('Print specs');
   t('Product');
   t('Program area');
@@ -1882,7 +3122,9 @@ function osu_publication_field_default_field_instances() {
   t('Series suffix');
   t('Status');
   t('Status date');
-  t('Supplemental files');
+  t('Supplemental content');
+  t('Supplemental link');
+  t('TODO: Add help text');
   t('This is the place to designate items that should <strong>always</strong> appear together in the Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
   t('Topic');
   t('Update the status and status date as you work on a project, or when you need to record that it was reviewed.<br>
@@ -1891,6 +3133,7 @@ function osu_publication_field_default_field_instances() {
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');
   t('When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
+  t('ePub file upload');
   t('this should really be on the top');
 
   return $field_instances;
