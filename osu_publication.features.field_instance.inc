@@ -1161,7 +1161,7 @@ function osu_publication_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'xls xlsx csv',
+      'file_extensions' => 'xls xlsx csv xlsm',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
@@ -2349,17 +2349,17 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
-            'pathauto' => 0,
-            'transliterate' => 0,
+            'pathauto' => 1,
+            'transliterate' => 1,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
-            'pathauto' => 0,
-            'transliterate' => 0,
+            'pathauto' => 1,
+            'transliterate' => 1,
           ),
-          'value' => '',
+          'value' => 'images/pubcovers',
         ),
         'retroactive_update' => 0,
       ),
@@ -2374,8 +2374,6 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'file_entity_inline' => 0,
-        'file_entity_inline_fields' => array(),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
