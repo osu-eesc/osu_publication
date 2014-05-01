@@ -2223,8 +2223,8 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       ),
     ),
     'deleted' => 0,
-    'description' => 'Update the status and status date as you work on a project, or when you need to record that it was reviewed.<br>
-<em> Note: Record the actual review date and notes about periodic review in the "Publishing information" section.</em>',
+    'description' => 'Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
+<em> Notes: For details about status and deadlines within "in production", consult the project manager.<br>Record actual review date and notes about periodic review in the "Publishing information" section.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2275,7 +2275,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 35,
@@ -3125,8 +3125,8 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('TODO: Add help text');
   t('This is the place to designate items that should <strong>always</strong> appear together in the Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
   t('Topic');
-  t('Update the status and status date as you work on a project, or when you need to record that it was reviewed.<br>
-<em> Note: Record the actual review date and notes about periodic review in the "Publishing information" section.</em>');
+  t('Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
+<em> Notes: For details about status and deadlines within "in production", consult the project manager.<br>Record actual review date and notes about periodic review in the "Publishing information" section.</em>');
   t('Upload preview PDF if necessary.');
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');
   t('When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
