@@ -374,7 +374,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -441,7 +441,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -505,7 +505,7 @@ function osu_publication_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -640,7 +640,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -712,7 +712,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 46,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -777,7 +777,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 43,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -847,7 +847,7 @@ function osu_publication_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'search_index' => array(
         'label' => 'inline',
@@ -927,7 +927,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 41,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -989,7 +989,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 53,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1069,7 +1069,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 47,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1132,7 +1132,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 54,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1207,7 +1207,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1271,7 +1271,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 51,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1329,7 +1329,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 30,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1395,7 +1395,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 50,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1450,7 +1450,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 44,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1512,7 +1512,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 22,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1573,7 +1573,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 28,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1636,7 +1636,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 3,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1709,7 +1709,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 49,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1795,7 +1795,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 48,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1859,7 +1859,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1925,7 +1925,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1987,7 +1987,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 29,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2068,7 +2068,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2141,7 +2141,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
           'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2230,7 +2230,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 40,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2393,7 +2393,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 42,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2458,7 +2458,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 26,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2523,7 +2523,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 25,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2587,7 +2587,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 27,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2650,7 +2650,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2721,7 +2721,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2802,7 +2802,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 52,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2874,7 +2874,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 45,
       ),
       'search_index' => array(
         'label' => 'hidden',

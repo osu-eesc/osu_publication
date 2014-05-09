@@ -281,7 +281,7 @@ function osu_publication_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '35',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -303,7 +303,7 @@ function osu_publication_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '18',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -325,7 +325,7 @@ function osu_publication_strongarm() {
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '7',
+            'weight' => '8',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -347,7 +347,7 @@ function osu_publication_strongarm() {
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '29',
+            'weight' => '31',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -387,7 +387,7 @@ function osu_publication_strongarm() {
         ),
         'product:field_cost_per_copy' => array(
           'default' => array(
-            'weight' => '22',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'search_index' => array(
@@ -427,7 +427,7 @@ function osu_publication_strongarm() {
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '34',
+            'weight' => '36',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -489,7 +489,7 @@ function osu_publication_strongarm() {
         ),
         'estimates_expenses_eva_estimate_expsenses' => array(
           'default' => array(
-            'weight' => '21',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'search_index' => array(
@@ -511,7 +511,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_eva_links' => array(
           'default' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => TRUE,
           ),
           'token' => array(
@@ -529,7 +529,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_formatted_series_number' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
           ),
           'token' => array(
@@ -557,7 +557,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_eva_supplemental' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => TRUE,
           ),
           'teaser' => array(
