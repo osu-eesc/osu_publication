@@ -100,7 +100,7 @@ function osu_publication_node_info() {
       'help' => '',
     ),
     'estimates_expenses' => array(
-      'name' => t('Estimates and Expenses'),
+      'name' => t('Estimates and expenses'),
       'base' => 'node_content',
       'description' => t('Enter a brief title for this expense.'),
       'has_title' => '1',

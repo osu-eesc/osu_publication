@@ -62,7 +62,7 @@ function osu_publication_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -86,7 +86,48 @@ function osu_publication_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-estimates_expenses-field_estimate_quantity'
+  $field_instances['node-estimates_expenses-field_estimate_quantity'] = array(
+    'bundle' => 'estimates_expenses',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Add help text',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_estimate_quantity',
+    'label' => 'Quantity',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
     ),
   );
 
@@ -104,7 +145,7 @@ function osu_publication_field_default_field_instances() {
           'calculation' => FALSE,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -128,7 +169,7 @@ function osu_publication_field_default_field_instances() {
         'currency_code' => 'default',
       ),
       'type' => 'commerce_price_full',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -321,48 +362,6 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-estimates_expenses-field_project_reference'
-  $field_instances['node-estimates_expenses-field_project_reference'] = array(
-    'bundle' => 'estimates_expenses',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_plain',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_project_reference',
-    'label' => 'Project Reference',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'node_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'node_reference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-osu_catalog_publication-field_account_type'
   $field_instances['node-osu_catalog_publication-field_account_type'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -374,7 +373,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -441,7 +440,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -556,60 +555,49 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-osu_catalog_publication-field_author_reference'
-  $field_instances['node-osu_catalog_publication-field_author_reference'] = array(
+  // Exported field_instance: 'node-osu_catalog_publication-field_authors_entity_ref'
+  $field_instances['node-osu_catalog_publication-field_authors_entity_ref'] = array(
     'bundle' => 'osu_catalog_publication',
-    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a few characters of the author name. When you see the correct author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.',
+    'description' => 'To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br>
+To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br>
+If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 2,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
       ),
       'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'node_reference',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'node_reference_plain',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 4,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'token' => array(
-        'label' => 'hidden',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'ul',
-    'field_name' => 'field_author_reference',
+    'field_name' => 'field_authors_entity_ref',
     'label' => 'Authors',
     'required' => 0,
     'settings' => array(
@@ -617,13 +605,16 @@ function osu_publication_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'node_reference',
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'node_reference/autocomplete',
-        'size' => 60,
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'delete_references' => 0,
+          'match_operator' => 'CONTAINS',
+        ),
       ),
-      'type' => 'node_reference_autocomplete',
+      'type' => 'inline_entity_form',
       'weight' => 9,
     ),
   );
@@ -640,7 +631,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -712,7 +703,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 47,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -777,7 +768,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 44,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -927,7 +918,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 42,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -989,7 +980,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 54,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1058,6 +1049,61 @@ function osu_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_estimate_entity_ref'
+  $field_instances['node-osu_catalog_publication-field_estimate_entity_ref'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 56,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'ul',
+    'field_name' => 'field_estimate_entity_ref',
+    'label' => 'Estimates and expenses',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 0,
+          'delete_references' => 1,
+          'match_operator' => 'CONTAINS',
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 47,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_estimates_expense_notes'
   $field_instances['node-osu_catalog_publication-field_estimates_expense_notes'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -1069,7 +1115,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 48,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1118,7 +1164,7 @@ function osu_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 47,
+      'weight' => 48,
     ),
   );
 
@@ -1132,7 +1178,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 55,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1207,7 +1253,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 40,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1271,7 +1317,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 52,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1329,7 +1375,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1378,7 +1424,7 @@ function osu_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1395,7 +1441,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 51,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1450,7 +1496,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 45,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1512,7 +1558,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1573,7 +1619,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1636,7 +1682,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 19,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1709,7 +1755,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 50,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1795,7 +1841,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 49,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1844,7 +1890,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 48,
+      'weight' => 49,
     ),
   );
 
@@ -1859,7 +1905,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1925,7 +1971,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 39,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1987,7 +2033,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2119,7 +2165,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -2230,7 +2276,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 41,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2393,7 +2439,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 43,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2458,7 +2504,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2508,7 +2554,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -2523,7 +2569,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2587,7 +2633,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2636,7 +2682,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -2650,7 +2696,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 36,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2721,7 +2767,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2802,7 +2848,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 53,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2874,7 +2920,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 46,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2935,8 +2981,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -2974,8 +3026,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -3009,12 +3067,18 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'bundle' => 'publication_author',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'this should really be on the top',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'editablefields',
+        'settings' => array(
+          'click_to_edit' => FALSE,
+          'empty_text' => '',
+          'fallback_format' => NULL,
+          'fallback_settings' => array(),
+        ),
+        'type' => 'editable',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -3050,6 +3114,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
 Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
 <strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />');
   t('Account');
+  t('Add help text');
   t('Add to store');
   t('Alt series number');
   t('Amount');
@@ -3067,7 +3132,6 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('EESC accounting staff will enter the invoice number.');
   t('EESC-produced or purchased');
   t('Enter a brief summary of the content. This description appears on the "detail page" for this item in the Catalog.');
-  t('Enter a few characters of the author name. When you see the correct author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
   t('Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
   t('Enter any additional notes about the estimates and expenses noted above.<br><em>Note: For example, note that a grant is paying for a portion of printing expenses, or that the author and EESC are sharing contractor expenses.</em>');
   t('Enter any dashes and letters that come after the numeric portion of the series number.<br>
@@ -3080,6 +3144,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes).');
   t('Estimate or actual');
   t('Estimate/expense notes');
+  t('Estimates and expenses');
   t('Excel file upload');
   t('Expense types');
   t('First name');
@@ -3103,8 +3168,8 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Print specs');
   t('Product');
   t('Program area');
-  t('Project Reference');
   t('Project manager');
+  t('Quantity');
   t('Record any notes about the status or results of periodic review.');
   t('Review notes');
   t('Select appropriate topics and subtopics.');
@@ -3124,6 +3189,9 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Supplemental link');
   t('TODO: Add help text');
   t('This is the place to designate items that should <strong>always</strong> appear together in the Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
+  t('To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br>
+To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br>
+If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.');
   t('Topic');
   t('Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
 <em> Notes: For details about status and deadlines within "in production", consult the project manager.<br>Record actual review date and notes about periodic review in the "Publishing information" section.</em>');
@@ -3132,7 +3200,6 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
   t('ePub file upload');
-  t('this should really be on the top');
 
   return $field_instances;
 }

@@ -226,6 +226,9 @@ function osu_publication_strongarm() {
         'path' => array(
           'weight' => '8',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
@@ -281,7 +284,7 @@ function osu_publication_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '37',
+            'weight' => '38',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -303,7 +306,7 @@ function osu_publication_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '20',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -347,7 +350,7 @@ function osu_publication_strongarm() {
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '31',
+            'weight' => '32',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -387,7 +390,7 @@ function osu_publication_strongarm() {
         ),
         'product:field_cost_per_copy' => array(
           'default' => array(
-            'weight' => '24',
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'search_index' => array(
@@ -427,7 +430,7 @@ function osu_publication_strongarm() {
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '36',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -489,7 +492,7 @@ function osu_publication_strongarm() {
         ),
         'estimates_expenses_eva_estimate_expsenses' => array(
           'default' => array(
-            'weight' => '23',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'search_index' => array(
@@ -611,6 +614,9 @@ function osu_publication_strongarm() {
         ),
         'path' => array(
           'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '5',
         ),
       ),
       'display' => array(),
