@@ -97,9 +97,9 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'catalog_taxonomies';
   $view->description = 'Media Type and Topic views';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Catalog Taxonomies';
+  $view->human_name = 'Catman Taxonomies';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -168,6 +168,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Browse by Topic';
   $handler->display->display_options['display_description'] = 'Topic sidebar block';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
@@ -182,7 +183,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'category/[name]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
@@ -190,7 +190,9 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['name']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -235,8 +237,10 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'category/[name]';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'topics/[name]';
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['name']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
@@ -276,6 +280,56 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'menu-browse';
   $export['catalog_taxonomies'] = $view;
+
+  $view = new view();
+  $view->name = 'catman_taxonomy_description';
+  $view->description = 'displays term description if available';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Catman Taxonomy description';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_class'] = 'term-description';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['description']['element_default_classes'] = FALSE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'osu_catalog_topic' => 'osu_catalog_topic',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $export['catman_taxonomy_description'] = $view;
 
   $view = new view();
   $view->name = 'next_series_number';
@@ -480,11 +534,9 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['total_pages'] = '2';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
   $handler->display->display_options['style_options']['columns'] = '2';
@@ -498,7 +550,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>The Oregon State University Extension Catalog is <em>the</em> source for current, peer-reviewed, research-based learning materials published by <a href="http://extension.oregonstate.edu">OSU Extension</a>. It is an active and growing resource, delivering learning materials in a variety of media for use in a variety of outreach and engagement activities and programs. Catalog materials are reviewed regularly (by faculty content experts) and updated as needed.</p><p>You can search, browse by topic or subtopic, and order online. Questions? Please review the <a href="/node/2">ordering information</a>, or <a href="/node/1222">contact us</a>.</p><p>&nbsp;</p>
+  $handler->display->display_options['header']['area']['content'] = '<p>The Oregon State University Extension Catalog is <em>the</em> source for current, peer-reviewed, research-based learning materials published by <a href="http://extension.oregonstate.edu">OSU Extension</a>. It is an active and growing resource, delivering learning materials in a variety of media for use in a variety of outreach and engagement activities and programs. Catalog materials are reviewed regularly (by faculty content experts) and updated as needed.</p><p>You can search, browse by topic or subtopic, and order online. <strong>Questions?</strong> Please review the <a href="/node/2">ordering information</a>, or <a href="/node/1222">contact us</a>.</p><p>&nbsp;</p>
 
 <h2 class="title">New Releases</h2>
 ';
@@ -958,9 +1010,9 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'osu_publication_taxonomy_term';
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'node';
-  $view->human_name = 'OSU Taxonomy term';
+  $view->human_name = 'Catman Taxonomy term';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -980,8 +1032,26 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_new_or_revised' => 'field_new_or_revised',
+    'field_publication_date' => 'field_publication_date',
+  );
+  /* Field: Content: Cover image */
+  $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_thumbnail']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
+    'image_style' => 'publication_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_publication_thumbnail']['field_api_classes'] = TRUE;
   /* Field: Content: Series prefix */
   $handler->display->display_options['fields']['field_series_prefix']['id'] = 'field_series_prefix';
   $handler->display->display_options['fields']['field_series_prefix']['table'] = 'field_data_field_series_prefix';
@@ -990,33 +1060,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_series_prefix']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_series_prefix']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_series_prefix']['element_default_classes'] = FALSE;
-  /* Field: Content: Alt series number */
-  $handler->display->display_options['fields']['field_alt_series_number']['id'] = 'field_alt_series_number';
-  $handler->display->display_options['fields']['field_alt_series_number']['table'] = 'field_data_field_alt_series_number';
-  $handler->display->display_options['fields']['field_alt_series_number']['field'] = 'field_alt_series_number';
-  $handler->display->display_options['fields']['field_alt_series_number']['label'] = '';
-  $handler->display->display_options['fields']['field_alt_series_number']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_alt_series_number']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_alt_series_number']['element_default_classes'] = FALSE;
-  /* Field: Content: Series suffix */
-  $handler->display->display_options['fields']['field_series_suffix']['id'] = 'field_series_suffix';
-  $handler->display->display_options['fields']['field_series_suffix']['table'] = 'field_data_field_series_suffix';
-  $handler->display->display_options['fields']['field_series_suffix']['field'] = 'field_series_suffix';
-  $handler->display->display_options['fields']['field_series_suffix']['label'] = '';
-  $handler->display->display_options['fields']['field_series_suffix']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_series_suffix']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_suffix']['element_default_classes'] = FALSE;
-  /* Field: Content: Cover image */
-  $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
-    'image_style' => 'publication_thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Series number */
   $handler->display->display_options['fields']['field_series_number']['id'] = 'field_series_number';
   $handler->display->display_options['fields']['field_series_number']['table'] = 'field_data_field_series_number';
@@ -1029,21 +1072,34 @@ function osu_publication_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
+  /* Field: Content: Series suffix */
+  $handler->display->display_options['fields']['field_series_suffix']['id'] = 'field_series_suffix';
+  $handler->display->display_options['fields']['field_series_suffix']['table'] = 'field_data_field_series_suffix';
+  $handler->display->display_options['fields']['field_series_suffix']['field'] = 'field_series_suffix';
+  $handler->display->display_options['fields']['field_series_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_series_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_series_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_suffix']['element_default_classes'] = FALSE;
   /* Field: full series number */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'full series number';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="home-series-number">[field_series_prefix] [field_series_number][field_series_suffix]</div>';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_series_prefix] [field_series_number][field_series_suffix]';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'home-series-number';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'home-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: New or revised */
   $handler->display->display_options['fields']['field_new_or_revised']['id'] = 'field_new_or_revised';
   $handler->display->display_options['fields']['field_new_or_revised']['table'] = 'field_data_field_new_or_revised';
@@ -1073,6 +1129,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_new_or_revised] [field_publication_date]';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'new-revised-text';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
   /* Sort criterion: Content: Sticky */
@@ -1860,6 +1917,82 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['suggest_series_number'] = $view;
+
+  $view = new view();
+  $view->name = 'term_parent_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Taxonomy Term Parent view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Taxonomy Term Parent View %';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'name' => 'name',
+    'tid' => 'tid',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['fields']['name']['convert_spaces'] = TRUE;
+  /* Field: COUNT(Taxonomy term: Term ID) */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  $handler->display->display_options['fields']['tid']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['tid']['format_plural_singular'] = '@count item';
+  $handler->display->display_options['fields']['tid']['format_plural_plural'] = '@count items';
+  $handler->display->display_options['fields']['tid']['prefix'] = ' ( ';
+  $handler->display->display_options['fields']['tid']['suffix'] = ' )';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Contextual filter: Taxonomy term: Name */
+  $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['name_1']['field'] = 'name';
+  $handler->display->display_options['arguments']['name_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['name_1']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['name_1']['title'] = '%1';
+  $handler->display->display_options['arguments']['name_1']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['name_1']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['name_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['name_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['name_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['name_1']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['name_1']['validate_options']['vocabularies'] = array(
+    'osu_catalog_topic' => 'osu_catalog_topic',
+  );
+  $handler->display->display_options['arguments']['name_1']['validate']['fail'] = 'summary';
+  $handler->display->display_options['arguments']['name_1']['limit'] = '0';
+  $export['term_parent_view'] = $view;
 
   return $export;
 }

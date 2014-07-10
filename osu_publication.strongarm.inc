@@ -104,6 +104,110 @@ function osu_publication_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_home_link_title';
+  $strongarm->value = 'Catalog';
+  $export['crumbs_home_link_title'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_minimum_trail_items';
+  $strongarm->value = '2';
+  $export['crumbs_minimum_trail_items'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_node_parent_patterns';
+  $strongarm->value = array(
+    'account_type' => '',
+    'publication_author' => '',
+    'page' => '',
+    'announcement' => '',
+    'estimates_expenses' => '',
+    'osu_catalog_publication' => '',
+    'webform' => '',
+  );
+  $export['crumbs_node_parent_patterns'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_original_theme_breadcrumb';
+  $strongarm->value = array(
+    'catman_shiny' => 'shiny_breadcrumb',
+    'doug_fir_catalog' => 'theme_breadcrumb',
+    'doug_fir' => 'theme_breadcrumb',
+    'stark' => 'theme_breadcrumb',
+    'bartik' => 'theme_breadcrumb',
+    'seven' => 'theme_breadcrumb',
+  );
+  $export['crumbs_original_theme_breadcrumb'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_override_theme_breadcrumb';
+  $strongarm->value = array(
+    'theme_breadcrumb' => 0,
+    'shiny_breadcrumb' => 0,
+  );
+  $export['crumbs_override_theme_breadcrumb'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_separator';
+  $strongarm->value = ' &raquo; ';
+  $export['crumbs_separator'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_separator_span';
+  $strongarm->value = 1;
+  $export['crumbs_separator_span'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_show_current_page';
+  $strongarm->value = '0';
+  $export['crumbs_show_current_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_show_front_page';
+  $strongarm->value = 1;
+  $export['crumbs_show_front_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_taxonomy_term_parent_patterns';
+  $strongarm->value = array(
+    'osu_catalog_media_type' => '',
+    'osu_catalog_topic' => '[term:parents]',
+    'program_area' => '',
+  );
+  $export['crumbs_taxonomy_term_parent_patterns'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_weights';
+  $strongarm->value = array(
+    'crumbs.home_title' => 1,
+    'commerce_checkout.*' => 2,
+    'taxonomy.termParent.osu_catalog_topic' => 3,
+    '*' => 4,
+  );
+  $export['crumbs_weights'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_full_month_year';
   $strongarm->value = 'F Y';
   $export['date_format_full_month_year'] = $strongarm;
@@ -284,7 +388,7 @@ function osu_publication_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '38',
+            'weight' => '36',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -306,7 +410,7 @@ function osu_publication_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '21',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -350,7 +454,7 @@ function osu_publication_strongarm() {
         ),
         'product:commerce_stock' => array(
           'default' => array(
-            'weight' => '32',
+            'weight' => '30',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -390,7 +494,7 @@ function osu_publication_strongarm() {
         ),
         'product:field_cost_per_copy' => array(
           'default' => array(
-            'weight' => '25',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'search_index' => array(
@@ -430,7 +534,7 @@ function osu_publication_strongarm() {
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '37',
+            'weight' => '35',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -514,7 +618,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_eva_links' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '7',
             'visible' => TRUE,
           ),
           'token' => array(
@@ -532,7 +636,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_formatted_series_number' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => TRUE,
           ),
           'token' => array(
@@ -560,7 +664,7 @@ function osu_publication_strongarm() {
         ),
         'project_series_date_length_eva_supplemental' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '10',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -859,7 +963,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_account_type_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'account-type/[node:title]';
   $export['pathauto_node_account_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

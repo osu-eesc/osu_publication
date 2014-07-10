@@ -272,6 +272,8 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'account_type' => 0,
+        'announcement' => 0,
+        'estimates_expenses' => 0,
         'osu_catalog_publication' => 0,
         'page' => 0,
         'publication_author' => 'publication_author',
@@ -1220,7 +1222,7 @@ function osu_publication_field_default_field_bases() {
         3 => 'Published',
         4 => 'Review requested',
         5 => 'Published and reviewed',
-        6 => 'Removed from catalog',
+        6 => 'Removed from Catalog',
       ),
       'allowed_values_function' => '',
     ),

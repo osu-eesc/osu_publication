@@ -30,7 +30,8 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 
   if ($form_id == 'osu_catalog_publication_node_form') {
     //dpm($form, 'form');
-    //dpm($form_state, 'form state');
+    // dpm($form_state, 'form state');
+    //dpm($form, 'form');
     // don't change existing value
     //if ($form['field_series_number']['und'][0]['value']['#default_value'] == '') {
 
@@ -48,10 +49,7 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 
     $form['field_estimate_entity_ref']['und']['#description'] = t($description_estimate);
 
-
-
-
-
+    $form['field_authors_entity_ref']['und']['#description'] = t($description_author);
 
 
     if (empty($form['nid']['#value']) && empty($form['field_series_number']['und'][0]['value']['#default_value'])) {
@@ -97,6 +95,46 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 function series_number_callback($form, $form_state) {
   return $form['field_series_number'];
 }
+
+function series_prefix_number_suffix_callback($form, $form_state) {
+
+  $product_id = $form_state['product_id'];
+
+  if ($product_id && is_numeric($product_id)) {
+
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition('entity_type', 'node')
+      ->fieldCondition('field_publication_product', 'product_id', $product_id, '=')
+      ->execute();
+
+    foreach ($result['node'] as $key => $node) {
+      foreach ($node as $key => $nid) {
+        if ($key == 'nid') {
+          if (node_load($nid)) {
+            $thisnode = node_load($nid);
+
+            $sku = $thisnode->field_series_prefix['und'][0]['value'] . $thisnode->field_series_number['und'][0]['value'] . $thisnode->field_series_prefix['und'][0]['value'];
+
+            db_update('commerce_product')
+              ->fields(array(
+                'sku' => $sku,
+              ))
+              ->condition('product_id', $product_id, '=')
+              ->execute();
+
+          } // if (node_load($nid))
+
+        }  // if ($key == 'nid')
+
+      }  // foreach ($node as $key => $nid)
+
+    }  // foreach ($result['node'] as $key => $node)
+
+  }  // if ($product_id && is_numeric($product_id))
+
+} // function series_prefix_number_suffix_callback
+
+
 
 /**
  * Implements hook_token_info().
@@ -146,9 +184,120 @@ function osu_publication_tokens($type, $tokens, array $data = array(), array $op
           }
         break;
 
-
       }
     }
   }
-  return $replacements;
 }
+
+
+
+
+
+/**
+ * Alter the fields used to represent an entity in the IEF table.
+ *
+ * The fields can be either Field API fields or properties defined through
+ * hook_entity_property_info().
+ *
+ * @param $fields
+ *   The fields to alter.
+ * @param $context
+ *   An array with the following keys:
+ *   - parent_entity_type: The type of the parent entity.
+ *   - parent_bundle: The bundle of the parent entity.
+ *   - field_name: The name of the reference field on which IEF is operating.
+ *   - entity_type: The type of the referenced entities.
+ *   - allowed_bundles: Bundles allowed on the reference field.
+ *
+ * @see EntityInlineEntityFormController::tableFields()
+ */
+function osu_publication_inline_entity_form_table_fields_alter(&$fields, $context) {
+
+  // IEF is managing products on a node form.
+  if ($context['parent_entity_type'] == 'node' && $context['entity_type'] == 'node') {
+
+    // Change fields in Estimates and expenses table
+    if ($context['field_name'] == 'field_estimate_entity_ref') {
+
+      // dpm($context);
+
+      unset($fields['status']); // remove status
+
+      $fields['field_expense_types'] = array(
+        'type' => 'field',
+        'label' => t('Expense type'),
+        'weight' => 1,
+      );
+
+      $fields['field_estimate_or_actual'] = array(
+        'type' => 'field',
+        'label' => t('Estimate or actual'),
+        'weight' => 2,
+      );
+
+      $fields['field_expense_amount'] = array(
+        'type' => 'field',
+        'label' => t('Amount'),
+        'weight' => 3,
+      );
+
+      $fields['field_estimate_quantity'] = array(
+        'type' => 'field',
+        'label' => t('Quantity'),
+        'weight' => 4,
+      );
+
+      $fields['field_expense_date'] = array(
+        'type' => 'field',
+        'label' => t('Date'),
+        'weight' => 5,
+      );
+
+      $fields['field_expense_invoice_number'] = array(
+        'type' => 'field',
+        'label' => t('Invoice number'),
+        'weight' => 6,
+      );
+
+      $fields['field_expense_invoice_date'] = array(
+        'type' => 'field',
+        'label' => t('Invoice date'),
+        'weight' => 7,
+      );
+
+    }
+
+    // Change fields in Authors table
+    if ($context['field_name'] == 'field_authors_entity_ref') {
+
+      //dpm($fields, '$fields');
+
+      unset($fields['status']); // remove status
+      unset($fields['title']); // remove title
+
+      $fields['field_first_name'] = array(
+        'type' => 'field',
+        'label' => t('First name'),
+        'weight' => 1,
+      );
+
+      $fields['field_last_name'] = array(
+        'type' => 'field',
+        'label' => t('Last name'),
+        'weight' => 2,
+      );
+
+      $fields['field_last_name'] = array(
+        'type' => 'field',
+        'label' => t('Last name'),
+        'weight' => 2,
+      );
+
+    }
+
+
+
+  }
+
+}
+

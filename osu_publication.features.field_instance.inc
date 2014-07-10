@@ -373,7 +373,7 @@ function osu_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 32,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -434,13 +434,20 @@ function osu_publication_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'If this item will be available to order throgh the Catalog, check this box and then fill out the necessary cost and inventory fields. For SKU, enter the entire series number (e.g., EM 1234-S). For cost and price, enter values with decimal places but without dollar signs (e.g., 1.50 for $1.50).',
+    'description' => 'Only the store manager and admins can add and edit "store" information (e.g., cost and inventory).<br>
+Changes to store information take effect immediately, so adding/updating this information should be the last thing you do before publishing the project to the Catalog.<br><br>
+When you\'re ready (items printed/received or ready in Printables), have cost, sales price, and inventory information handy. Then contact the store manager for assistance.<br>
+The store manager will check this box and then fill out the necessary cost and inventory fields (or update these fields if the item already exists).<br><br>
+<em><strong>Notes to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction), make these changes through Store > Products > Product Variations (rather than in the project edit form). Note the reason for the changes in the log message section before saving.</li>
+<li>For SKU, enter the entire series number, lowercase and without spaces (e.g., em1234-s).</li>
+<li>For cost and price, enter values with decimal places but without dollar sign (e.g., 1.50 for $1.50).</li></ul>',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 31,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -504,7 +511,7 @@ function osu_publication_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -563,9 +570,7 @@ function osu_publication_field_default_field_instances() {
   $field_instances['node-osu_catalog_publication-field_authors_entity_ref'] = array(
     'bundle' => 'osu_catalog_publication',
     'deleted' => 0,
-    'description' => 'To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br>
-To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br>
-If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -574,7 +579,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -631,7 +636,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 21,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -703,7 +708,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 45,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -762,13 +767,15 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.',
+    'description' => 'Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
+<em> Note: It\'s easiest to confirm that all authors are in the database before creating or editing a project.<br>
+If you forget, you can also open a second browser tab, open CatMan, and create and save a new author before returning to this form.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 42,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -802,6 +809,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_corresponding_author',
     'label' => 'Corresponding author',
     'required' => 1,
@@ -838,7 +846,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'search_index' => array(
         'label' => 'inline',
@@ -918,7 +926,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 40,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -980,7 +988,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 52,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1059,7 +1067,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 54,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1115,7 +1123,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 46,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1178,7 +1186,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 53,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1253,7 +1261,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 38,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1317,7 +1325,7 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 50,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1369,13 +1377,13 @@ If you\'re not sure: Try the "add existing" button first. If you don\'t find the
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the quantity and type of content (e.g., 6 pages, 5 minutes).',
+    'description' => 'Enter the quantity and type of content (e.g., 6 pages, 5 minutes). If length/quantity does not apply (e.g., Pachyderm or other online module, poster, etc.), leave this blank and note the format in the description field.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 29,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1441,7 +1449,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 49,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1490,13 +1498,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the media type (or types) for this project.',
+    'description' => 'Select the media type(s) for this project. You can add more than one.<br>
+To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 43,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1558,7 +1567,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 22,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1619,7 +1628,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 27,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1682,7 +1691,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 18,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1755,7 +1764,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 48,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1841,7 +1850,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 47,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1905,7 +1914,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 33,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1965,13 +1974,13 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select the EESC project manager for this project.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 37,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2033,7 +2042,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 28,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2114,7 +2123,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2249,10 +2258,8 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
           'allow_existing' => FALSE,
           'autogenerate_title' => 0,
           'delete_references' => 1,
-          'label_plural' => 'products',
-          'label_singular' => 'product',
           'match_operator' => 'CONTAINS',
-          'override_labels' => 0,
+          'use_variation_language' => 0,
         ),
       ),
       'type' => 'inline_entity_form_single',
@@ -2270,13 +2277,13 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     ),
     'deleted' => 0,
     'description' => 'Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
-<em> Notes: For details about status and deadlines within "in production", consult the project manager.<br>Record actual review date and notes about periodic review in the "Publishing information" section.</em>',
+<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" section.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 39,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2332,7 +2339,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   $field_instances['node-osu_catalog_publication-field_publication_thumbnail'] = array(
     'bundle' => 'osu_catalog_publication',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Suggested wording for alt text: Cover image of EM 1234',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2439,7 +2446,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 41,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2497,14 +2504,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
+    'description' => 'Enter the numeric portion of the series number.<br>When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 25,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2563,13 +2570,13 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Choose the series prefix (such as EM, PNW, etc.)',
+    'description' => 'Choose the series prefix.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 24,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2633,7 +2640,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 26,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -2696,7 +2703,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 34,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2731,6 +2738,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_status_date',
     'label' => 'Status date',
     'required' => 1,
@@ -2767,7 +2775,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 19,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2848,7 +2856,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 51,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -2914,13 +2922,16 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select appropriate topics and subtopics.',
+    'description' => 'Select appropriate topics and subtopics.<br>
+First, choose a topic from the dropdown list. Then click "Add."<br>
+If the topic has subtopics, a second dropdown list will appear. Select a subtopic, and then click "Add."<br>
+To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 44,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -3120,7 +3131,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Amount');
   t('Authors');
   t('Catman link');
-  t('Choose the series prefix (such as EM, PNW, etc.)');
+  t('Choose the series prefix.');
   t('Companion projects');
   t('Corresponding author');
   t('Cover image');
@@ -3132,16 +3143,20 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('EESC accounting staff will enter the invoice number.');
   t('EESC-produced or purchased');
   t('Enter a brief summary of the content. This description appears on the "detail page" for this item in the Catalog.');
-  t('Enter a few characters of the corresponding author. When you see the right author listed in the auto-complete list, select it. If author is not found, <a href="/catalog/node/add/publication-author?destination=">add a new author</a>.');
+  t('Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
+<em> Note: It\'s easiest to confirm that all authors are in the database before creating or editing a project.<br>
+If you forget, you can also open a second browser tab, open CatMan, and create and save a new author before returning to this form.</em>');
   t('Enter any additional notes about the estimates and expenses noted above.<br><em>Note: For example, note that a grant is paying for a portion of printing expenses, or that the author and EESC are sharing contractor expenses.</em>');
   t('Enter any dashes and letters that come after the numeric portion of the series number.<br>
 <em>For example, if the series number is EM 1234-S, enter "-S". If the series number is 4-H 360R, enter "R". For 4-H publications that have a series number with a leading zero, enter the number and suffix. For example, if the series number is 4-H 0244L, enter "0244L".</em>');
   t('Enter any general notes about this project.<br>
 <em>Note: Please use the separate fields provided elsewhere for notes related to periodic review, expenses, and print specifications.</em>');
   t('Enter print specifications for future reference.');
+  t('Enter the numeric portion of the series number.<br>When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed.<br>
+<em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
   t('Enter the permanent link for the item.<br>
 <em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
-  t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes).');
+  t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes). If length/quantity does not apply (e.g., Pachyderm or other online module, poster, etc.), leave this blank and note the format in the description field.');
   t('Estimate or actual');
   t('Estimate/expense notes');
   t('Estimates and expenses');
@@ -3151,7 +3166,6 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('General notes');
   t('HTML version');
   t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).');
-  t('If this item will be available to order throgh the Catalog, check this box and then fill out the necessary cost and inventory fields. For SKU, enter the entire series number (e.g., EM 1234-S). For cost and price, enter values with decimal places but without dollar signs (e.g., 1.50 for $1.50).');
   t('If this project has two series numbers (e.g., a 4-H number and a PNW number), enter the alternate series number here.<br><em>Note: For Oregon 4-H publications, the 4-H series number is the primary series number, and the PNW number is the alternate series number.</em>');
   t('Index and activity code');
   t('Invoice date');
@@ -3163,6 +3177,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Mode of delivery');
   t('New or revised');
   t('Notes');
+  t('Only the store manager and admins can add and edit "store" information (e.g., cost and inventory).<br>
+Changes to store information take effect immediately, so adding/updating this information should be the last thing you do before publishing the project to the Catalog.<br><br>
+When you\'re ready (items printed/received or ready in Printables), have cost, sales price, and inventory information handy. Then contact the store manager for assistance.<br>
+The store manager will check this box and then fill out the necessary cost and inventory fields (or update these fields if the item already exists).<br><br>
+<em><strong>Notes to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction), make these changes through Store > Products > Product Variations (rather than in the project edit form). Note the reason for the changes in the log message section before saving.</li>
+<li>For SKU, enter the entire series number, lowercase and without spaces (e.g., em1234-s).</li>
+<li>For cost and price, enter values with decimal places but without dollar sign (e.g., 1.50 for $1.50).</li></ul>');
   t('PDF file upload');
   t('Preview file upload');
   t('Print specs');
@@ -3172,9 +3194,14 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Quantity');
   t('Record any notes about the status or results of periodic review.');
   t('Review notes');
-  t('Select appropriate topics and subtopics.');
+  t('Select appropriate topics and subtopics.<br>
+First, choose a topic from the dropdown list. Then click "Add."<br>
+If the topic has subtopics, a second dropdown list will appear. Select a subtopic, and then click "Add."<br>
+To remove a topic, click "Remove."');
+  t('Select the EESC project manager for this project.');
   t('Select the Extension program area for this project.');
-  t('Select the media type (or types) for this project.');
+  t('Select the media type(s) for this project. You can add more than one.<br>
+To remove a media type, click "Remove."');
   t('Select the mode (or modes) of delivery for this project.');
   t('Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721). If you want to record additional details about expenses for this item, do so in the "Estimate and expense notes" field below.<br><em>Note: Account and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>');
   t('Select the type of expense.');
@@ -3185,20 +3212,16 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Series suffix');
   t('Status');
   t('Status date');
+  t('Suggested wording for alt text: Cover image of EM 1234');
   t('Supplemental content');
   t('Supplemental link');
   t('TODO: Add help text');
   t('This is the place to designate items that should <strong>always</strong> appear together in the Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
-  t('To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br>
-To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br>
-If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.');
   t('Topic');
   t('Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
-<em> Notes: For details about status and deadlines within "in production", consult the project manager.<br>Record actual review date and notes about periodic review in the "Publishing information" section.</em>');
+<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" section.</em>');
   t('Upload preview PDF if necessary.');
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');
-  t('When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed. Enter the numeric portion of the series number.<br>
-<em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
   t('ePub file upload');
 
   return $field_instances;
