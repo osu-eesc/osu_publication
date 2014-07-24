@@ -328,10 +328,10 @@ function osu_publication_strongarm() {
           'weight' => '9',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
@@ -874,6 +874,7 @@ function osu_publication_strongarm() {
   $strongarm->name = 'node_options_estimates_expenses';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_estimates_expenses'] = $strongarm;
 
@@ -921,7 +922,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_publication_author';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_publication_author'] = $strongarm;
 
   $strongarm = new stdClass();

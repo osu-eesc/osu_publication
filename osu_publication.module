@@ -28,12 +28,25 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
     $form['field_media_type_tid']['#options']['All'] = 'Media Type';
   }
 
+  if ($form_id == 'estimates_expenses_node_form') {
+    //dpm($form);
+    $form['field_expense_amount']['#size'] = 20;
+    $form['field_expense_invoice_number']['#size'] = 20;
+  }
+
+  if($form_id == 'commerce_product_ui_product_form') {
+
+    $form['sku']['#description'] = t('Enter the entire series number, lowercase and without spaces (e.g., em1234-s).');
+  }
+
   if ($form_id == 'osu_catalog_publication_node_form') {
-    //dpm($form, 'form');
-    // dpm($form_state, 'form state');
-    //dpm($form, 'form');
-    // don't change existing value
-    //if ($form['field_series_number']['und'][0]['value']['#default_value'] == '') {
+    //dpm($form);
+    global $user;
+    // Disable add to store for everyone except Store managers (7) and Administrators (3).
+    if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
+      $form['field_add_to_store']['und']['#disabled'] = TRUE;
+      $form['field_add_to_store']['und']['#description'] = t('Only the store manager and admins can add and edit store information (e.g., cost, price, and inventory).');
+    }
 
     // change inline entity buttons text
     $form['field_authors_entity_ref']['und']['actions']['ief_add_existing']['#value'] = t('Add existing author');
@@ -45,7 +58,7 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 
     $description_author = 'To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br />To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br />If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.';
 
-    $description_estimate = 'Click "Add estimate or expense" button to add an estimate or expense for this project.';
+    $description_estimate = 'Click "Add estimate or expense" button to add a new estimate or expense for this project.';
 
     $form['field_estimate_entity_ref']['und']['#description'] = t($description_estimate);
 
@@ -190,8 +203,23 @@ function osu_publication_tokens($type, $tokens, array $data = array(), array $op
 }
 
 
+function osu_publication_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  //dpm($entity_form);
+  // Disable add to store for everyone except Store managers (7) and Administrators (3).
+  global $user;
+
+  if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
+    $entity_form['title']['#disabled'] = TRUE;
+    $entity_form['sku']['#disabled'] = TRUE;
+    $entity_form['commerce_price']['#disabled'] = TRUE;
+    $entity_form['field_cost_per_copy']['#disabled'] = TRUE;
+    $entity_form['commerce_stock']['#disabled'] = TRUE;
+    $entity_form['status']['#disabled'] = TRUE;
+  }
+  $entity_form['sku']['#description'] = t('Enter the entire series number, lowercase and without spaces (e.g., em1234-s).');
 
 
+}
 
 /**
  * Alter the fields used to represent an entity in the IEF table.

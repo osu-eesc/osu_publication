@@ -95,7 +95,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'estimates_expenses',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add help text',
+    'description' => 'Describe the quantity or scope (e.g., number of copies, copies per year, hours, or illustrations).',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -136,7 +136,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'estimates_expenses',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use two decimal places, no dollar sign.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -218,7 +218,7 @@ function osu_publication_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -272,7 +272,7 @@ function osu_publication_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'm/d/Y - g:i:sa',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -286,7 +286,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'estimates_expenses',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'EESC accounting staff will enter the invoice number.',
+    'description' => 'EESC accounting staff will enter the invoice number and date the invoice was paid.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -327,7 +327,7 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'estimates_expenses',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the type of expense.',
+    'description' => 'Select the type of estimate or expense.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -346,7 +346,7 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'ul',
     'field_name' => 'field_expense_types',
-    'label' => 'Expense types',
+    'label' => 'Estimate or expense type',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -367,7 +367,9 @@ function osu_publication_field_default_field_instances() {
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721). If you want to record additional details about expenses for this item, do so in the "Estimate and expense notes" field below.<br><em>Note: Account and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>',
+    'description' => 'Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
+If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
+<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -434,14 +436,9 @@ function osu_publication_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Only the store manager and admins can add and edit "store" information (e.g., cost and inventory).<br>
-Changes to store information take effect immediately, so adding/updating this information should be the last thing you do before publishing the project to the Catalog.<br><br>
-When you\'re ready (items printed/received or ready in Printables), have cost, sales price, and inventory information handy. Then contact the store manager for assistance.<br>
-The store manager will check this box and then fill out the necessary cost and inventory fields (or update these fields if the item already exists).<br><br>
-<em><strong>Notes to store manager:</strong></em><br>
-<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction), make these changes through Store > Products > Product Variations (rather than in the project edit form). Note the reason for the changes in the log message section before saving.</li>
-<li>For SKU, enter the entire series number, lowercase and without spaces (e.g., em1234-s).</li>
-<li>For cost and price, enter values with decimal places but without dollar sign (e.g., 1.50 for $1.50).</li></ul>',
+    'description' => '<em><strong>Note to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > Products > <a href="/admin/commerce/products/variations"><strong>Product Variations</strong></a>. Note the reason for the changes in the log message section before saving.</li>
+</ul>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -3121,11 +3118,13 @@ To remove a topic, click "Remove."',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em><strong>Note to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > Products > <a href="/admin/commerce/products/variations"><strong>Product Variations</strong></a>. Note the reason for the changes in the log message section before saving.</li>
+</ul>');
   t('<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
 Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
 <strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />');
   t('Account');
-  t('Add help text');
   t('Add to store');
   t('Alt series number');
   t('Amount');
@@ -3138,9 +3137,10 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Date');
   t('Date published or revised');
   t('Date reviewed');
+  t('Describe the quantity or scope (e.g., number of copies, copies per year, hours, or illustrations).');
   t('Description');
   t('EESC accounting staff will enter the invoice date.');
-  t('EESC accounting staff will enter the invoice number.');
+  t('EESC accounting staff will enter the invoice number and date the invoice was paid.');
   t('EESC-produced or purchased');
   t('Enter a brief summary of the content. This description appears on the "detail page" for this item in the Catalog.');
   t('Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
@@ -3158,10 +3158,10 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
 <em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
   t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes). If length/quantity does not apply (e.g., Pachyderm or other online module, poster, etc.), leave this blank and note the format in the description field.');
   t('Estimate or actual');
+  t('Estimate or expense type');
   t('Estimate/expense notes');
   t('Estimates and expenses');
   t('Excel file upload');
-  t('Expense types');
   t('First name');
   t('General notes');
   t('HTML version');
@@ -3177,14 +3177,6 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
   t('Mode of delivery');
   t('New or revised');
   t('Notes');
-  t('Only the store manager and admins can add and edit "store" information (e.g., cost and inventory).<br>
-Changes to store information take effect immediately, so adding/updating this information should be the last thing you do before publishing the project to the Catalog.<br><br>
-When you\'re ready (items printed/received or ready in Printables), have cost, sales price, and inventory information handy. Then contact the store manager for assistance.<br>
-The store manager will check this box and then fill out the necessary cost and inventory fields (or update these fields if the item already exists).<br><br>
-<em><strong>Notes to store manager:</strong></em><br>
-<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction), make these changes through Store > Products > Product Variations (rather than in the project edit form). Note the reason for the changes in the log message section before saving.</li>
-<li>For SKU, enter the entire series number, lowercase and without spaces (e.g., em1234-s).</li>
-<li>For cost and price, enter values with decimal places but without dollar sign (e.g., 1.50 for $1.50).</li></ul>');
   t('PDF file upload');
   t('Preview file upload');
   t('Print specs');
@@ -3203,8 +3195,10 @@ To remove a topic, click "Remove."');
   t('Select the media type(s) for this project. You can add more than one.<br>
 To remove a media type, click "Remove."');
   t('Select the mode (or modes) of delivery for this project.');
-  t('Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721). If you want to record additional details about expenses for this item, do so in the "Estimate and expense notes" field below.<br><em>Note: Account and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>');
-  t('Select the type of expense.');
+  t('Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
+If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
+<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>');
+  t('Select the type of estimate or expense.');
   t('Select whether this is an estimate or actual expense.');
   t('Select whether this project is produced by EESC or purchased from one of our PNW publishing partners.');
   t('Series number');
@@ -3221,6 +3215,7 @@ To remove a media type, click "Remove."');
   t('Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
 <em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" section.</em>');
   t('Upload preview PDF if necessary.');
+  t('Use two decimal places, no dollar sign.');
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');
   t('ePub file upload');
 

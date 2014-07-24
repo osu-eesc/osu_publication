@@ -94,7 +94,7 @@ function osu_publication_node_info() {
     'account_type' => array(
       'name' => t('Account Types'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Use for adding to and editing the list of standard EESC accounts and indexes.'),
       'has_title' => '1',
       'title_label' => t('Account name'),
       'help' => '',
@@ -102,9 +102,9 @@ function osu_publication_node_info() {
     'estimates_expenses' => array(
       'name' => t('Estimates and expenses'),
       'base' => 'node_content',
-      'description' => t('Enter a brief title for this expense.'),
+      'description' => t('Use for adding and editing project estimates and expenses and related notes.'),
       'has_title' => '1',
-      'title_label' => t('Estimate title'),
+      'title_label' => t('Estimate or expense title'),
       'help' => '',
     ),
     'osu_catalog_publication' => array(
@@ -118,7 +118,7 @@ function osu_publication_node_info() {
     'publication_author' => array(
       'name' => t('Author'),
       'base' => 'node_content',
-      'description' => t('Use for adding and editing publication authors'),
+      'description' => t('Use for adding and editing publication authors.'),
       'has_title' => '1',
       'title_label' => t('Full name'),
       'help' => '',

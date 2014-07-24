@@ -35,6 +35,7 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(
       'referenceable_types' => array(
         'account_type' => 'account_type',
+        'announcement' => 0,
         'estimates_expenses' => 0,
         'osu_catalog_publication' => 0,
         'page' => 0,
@@ -1333,7 +1334,7 @@ function osu_publication_field_default_field_bases() {
         'sr' => 'SR',
         'weed' => 'Weed',
         'insect' => 'Insect',
-        'plant3' => 'Plant',
+        'plant' => 'Plant',
         'silv' => 'SILV',
         'sb' => 'SB',
         'sp' => 'SP',
