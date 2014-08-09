@@ -13,7 +13,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'accounts_list';
   $view->description = 'Used on node form for displaying the title and index codes';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'node';
   $view->human_name = 'Accounts list';
   $view->core = 7;
@@ -288,7 +288,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'catman_taxonomy_description';
   $view->description = 'displays term description if available';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Catman Taxonomy description';
   $view->core = 7;
@@ -406,7 +406,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'osu_catalog_homepage';
   $view->description = 'Homepage for OSU catalog, displays the image thumbnail along with series #, title and publish date.';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'node';
   $view->human_name = 'OSU Catalog Homepage';
   $view->core = 7;
@@ -1362,7 +1362,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'project_series_date_length';
   $view->description = 'formats the series number, new/revised, and length and creates fields for links';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'node';
   $view->human_name = 'Project links';
   $view->core = 7;
@@ -1912,7 +1912,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'term_parent_view';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Taxonomy Term Parent view';
   $view->core = 7;

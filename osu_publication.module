@@ -315,11 +315,11 @@ function osu_publication_inline_entity_form_table_fields_alter(&$fields, $contex
         'weight' => 2,
       );
 
-      $fields['field_last_name'] = array(
-        'type' => 'field',
-        'label' => t('Last name'),
-        'weight' => 2,
-      );
+      // $fields['field_last_name'] = array(
+      //   'type' => 'field',
+      //   'label' => t('Last name'),
+      //   'weight' => 2,
+      // );
 
     }
 

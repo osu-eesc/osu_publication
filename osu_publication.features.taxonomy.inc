@@ -36,7 +36,7 @@ function osu_publication_taxonomy_default_vocabularies() {
       'name' => 'Topic',
       'machine_name' => 'osu_catalog_topic',
       'description' => 'The subject of the document.',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(
