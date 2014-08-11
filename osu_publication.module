@@ -204,11 +204,11 @@ function osu_publication_tokens($type, $tokens, array $data = array(), array $op
 
 
 function osu_publication_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
-  //dpm($entity_form);
+  // dpm($entity_form);
   // Disable add to store for everyone except Store managers (7) and Administrators (3).
   global $user;
 
-  if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
+  if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles) && $entity_form['#entity']->type == 'product' ) {
     $entity_form['title']['#disabled'] = TRUE;
     $entity_form['sku']['#disabled'] = TRUE;
     $entity_form['commerce_price']['#disabled'] = TRUE;
