@@ -701,6 +701,35 @@ function osu_publication_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_full_series_number'
+  $field_bases['field_full_series_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_full_series_number',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 30,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_general_notes'
   $field_bases['field_general_notes'] = array(
     'active' => 1,

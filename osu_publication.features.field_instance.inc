@@ -559,7 +559,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1246,6 +1246,59 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_full_series_number'
+  $field_instances['node-osu_catalog_publication-field_full_series_number'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Combined value of series prefix, number, and suffix',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 55,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_full_series_number',
+    'label' => 'Full series number',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 20,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_general_notes'
   $field_instances['node-osu_catalog_publication-field_general_notes'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -1429,7 +1482,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2173,7 +2226,7 @@ To remove a media type, click "Remove."',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -3133,6 +3186,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Authors');
   t('Catman link');
   t('Choose the series prefix.');
+  t('Combined value of series prefix, number, and suffix');
   t('Companion projects');
   t('Corresponding author');
   t('Cover image');
@@ -3165,6 +3219,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
   t('Estimates and expenses');
   t('Excel file upload');
   t('First name');
+  t('Full series number');
   t('General notes');
   t('HTML version');
   t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).');

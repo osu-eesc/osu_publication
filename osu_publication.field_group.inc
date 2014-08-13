@@ -33,7 +33,8 @@ function osu_publication_field_group_info() {
       7 => 'field_alt_series_number',
       8 => 'field_publication_thumbnail',
       9 => 'field_authors_entity_ref',
-      10 => 'title',
+      10 => 'field_full_series_number',
+      11 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

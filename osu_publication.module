@@ -40,13 +40,19 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'osu_catalog_publication_node_form') {
-    //dpm($form);
+    // dpm($form);
     global $user;
     // Disable add to store for everyone except Store managers (7) and Administrators (3).
     if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
       $form['field_add_to_store']['und']['#disabled'] = TRUE;
       $form['field_add_to_store']['und']['#description'] = t('Only the store manager and admins can add and edit store information (e.g., cost, price, and inventory).');
     }
+
+    // don't display full series number field to non-admins
+    if (!in_array($user->roles[3], $user->roles)) {
+      $form['field_full_series_number']['#access'] = FALSE;
+    }
+
 
     // change inline entity buttons text
     $form['field_authors_entity_ref']['und']['actions']['ief_add_existing']['#value'] = t('Add existing author');
