@@ -58,7 +58,7 @@ function osu_publication_field_default_field_instances() {
     'description' => 'Select whether this is an estimate or actual expense.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
@@ -98,7 +98,7 @@ function osu_publication_field_default_field_instances() {
     'description' => 'Describe the quantity or scope (e.g., number of copies, copies per year, hours, or illustrations).',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
