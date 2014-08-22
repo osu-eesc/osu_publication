@@ -133,6 +133,7 @@ function osu_publication_field_group_info() {
       3 => 'field_corresponding_author',
       4 => 'field_program_area',
       5 => 'field_status_date',
+      6 => 'field_radioactivity',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

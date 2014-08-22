@@ -51,6 +51,7 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
     // don't display full series number field to non-admins
     if (!in_array($user->roles[3], $user->roles)) {
       $form['field_full_series_number']['#access'] = FALSE;
+      $form['field_radioactivity']['#access'] = FALSE;
     }
 
 

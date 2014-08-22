@@ -534,12 +534,14 @@ function osu_publication_views_default_views() {
 
   /* Display: Homepage */
   $handler = $view->new_display('page', 'Homepage', 'page');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'panel';
   $handler->display->display_options['display_description'] = 'The view that controls the homepage.';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
@@ -554,15 +556,14 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>The Oregon State University Extension Catalog is <em>the</em> source for current, peer-reviewed, research-based learning materials published by <a href="http://extension.oregonstate.edu">OSU Extension</a>. It is an active and growing resource, delivering learning materials in a variety of media for use in a variety of outreach and engagement activities and programs. Catalog materials are reviewed regularly (by faculty content experts) and updated as needed.</p><p>You can search, browse by topic or subtopic, and order online. <strong>Questions?</strong> Please review the <a href="/node/2">ordering information</a>, or <a href="/node/1222">contact us</a>.</p><p>&nbsp;</p>
+  $handler->display->display_options['header']['area']['content'] = '<h2>Welcome to the OSU Extension Catalog!</h2>
+<p class="hidden-phone">The Catalog is <em>the</em> source for current, peer-reviewed, research-based learning materials published by <a href="http://extension.oregonstate.edu">OSU Extension</a>. It is an active and growing resource, with learning materials in a variety of media for use in a variety of outreach and engagement activities and programs.</p>
+<p>Check out our new releases, see what\'s popular, browse by topic, or search away.</p>
+<p class="hidden-phone"><strong>Questions?</strong> Please review the <a href="/node/2">ordering information</a>, or <a href="/node/1222">contact us</a>.</p>
 
 <h2 class="title">New Releases</h2>
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
-  $handler->display->display_options['header']['area_1']['table'] = 'views';
-  $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Cover image */
   $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
@@ -691,7 +692,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3 class="media-body">Publications authored or co-authored by %1</h3>';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="title">Publications authored or co-authored by %1</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Header: Global: Text area */
@@ -816,6 +817,10 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['field_publication_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_description']['element_wrapper_class'] = 'media-body';
   $handler->display->display_options['fields']['field_publication_description']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_description']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['field_publication_description']['settings'] = array(
+    'trim_length' => '600',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -1791,6 +1796,151 @@ function osu_publication_views_default_views() {
   );
   $handler->display->display_options['path'] = 'view/%/html';
   $export['project_series_date_length'] = $view;
+
+  $view = new view();
+  $view->name = 'radioactivity';
+  $view->description = 'creates a popular this week block';
+  $view->tag = 'catman';
+  $view->base_table = 'node';
+  $view->human_name = 'Radioactivity';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'well';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['separator'] = ' ';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="title">Popular this week</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Field: Content: Cover image */
+  $handler->display->display_options['fields']['field_publication_thumbnail']['id'] = 'field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['table'] = 'field_data_field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['field'] = 'field_publication_thumbnail';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_thumbnail']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_publication_thumbnail']['settings'] = array(
+    'image_style' => 'publication_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_publication_thumbnail']['field_api_classes'] = TRUE;
+  /* Field: Content: Full series number */
+  $handler->display->display_options['fields']['field_full_series_number']['id'] = 'field_full_series_number';
+  $handler->display->display_options['fields']['field_full_series_number']['table'] = 'field_data_field_full_series_number';
+  $handler->display->display_options['fields']['field_full_series_number']['field'] = 'field_full_series_number';
+  $handler->display->display_options['fields']['field_full_series_number']['label'] = '';
+  $handler->display->display_options['fields']['field_full_series_number']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_full_series_number']['element_class'] = 'radioactivity-series-number';
+  $handler->display->display_options['fields']['field_full_series_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_full_series_number']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'radioactivity-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: New or revised */
+  $handler->display->display_options['fields']['field_new_or_revised']['id'] = 'field_new_or_revised';
+  $handler->display->display_options['fields']['field_new_or_revised']['table'] = 'field_data_field_new_or_revised';
+  $handler->display->display_options['fields']['field_new_or_revised']['field'] = 'field_new_or_revised';
+  $handler->display->display_options['fields']['field_new_or_revised']['label'] = '';
+  $handler->display->display_options['fields']['field_new_or_revised']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_new_or_revised']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_new_or_revised']['element_default_classes'] = FALSE;
+  /* Field: Content: Date published or revised */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'full_month_year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Status date */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Status date';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_new_or_revised] [field_publication_date]';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'radioactivity-new-revised-text';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: Content: Radioactivity */
+  $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['field'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['label'] = '';
+  $handler->display->display_options['fields']['field_radioactivity']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_radioactivity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_radioactivity']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_radioactivity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_radioactivity']['click_sort_column'] = 'radioactivity_energy';
+  $handler->display->display_options['fields']['field_radioactivity']['settings'] = array(
+    'energy' => '10',
+    'type' => 'none',
+    'accuracy' => '100',
+  );
+  $handler->display->display_options['fields']['field_radioactivity']['field_api_classes'] = TRUE;
+  /* Sort criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['field'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'osu_catalog_publication' => 'osu_catalog_publication',
+  );
+  /* Filter criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['filters']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['filters']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['filters']['field_radioactivity_radioactivity_energy']['field'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['filters']['field_radioactivity_radioactivity_energy']['operator'] = '>';
+  $handler->display->display_options['filters']['field_radioactivity_radioactivity_energy']['value']['value'] = '1';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $export['radioactivity'] = $view;
 
   $view = new view();
   $view->name = 'suggest_series_number';

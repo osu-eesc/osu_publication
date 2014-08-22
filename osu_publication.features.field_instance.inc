@@ -2487,6 +2487,68 @@ To remove a media type, click "Remove."',
     ),
   );
 
+  // Exported field_instance: 'node-osu_catalog_publication-field_radioactivity'
+  $field_instances['node-osu_catalog_publication-field_radioactivity'] = array(
+    'bundle' => 'osu_catalog_publication',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1408733961,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 56,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 1,
+      'history_limit' => 8,
+      'profile' => 'default_weekly',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 38,
+    ),
+  );
+
   // Exported field_instance: 'node-osu_catalog_publication-field_review_notes'
   $field_instances['node-osu_catalog_publication-field_review_notes'] = array(
     'bundle' => 'osu_catalog_publication',
@@ -3044,14 +3106,8 @@ To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -3089,14 +3145,8 @@ To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -3134,14 +3184,8 @@ To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -3241,6 +3285,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
   t('Program area');
   t('Project manager');
   t('Quantity');
+  t('Radioactivity');
   t('Record any notes about the status or results of periodic review.');
   t('Review notes');
   t('Select appropriate topics and subtopics.<br>
