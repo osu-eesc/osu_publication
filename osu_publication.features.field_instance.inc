@@ -1114,7 +1114,9 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter any additional notes about the estimates and expenses noted above.<br><em>Note: For example, note that a grant is paying for a portion of printing expenses, or that the author and EESC are sharing contractor expenses.</em>',
+    'description' => 'Enter any additional notes about the estimates and expenses above.<br>
+Also enter notes regarding special cost/copy or sales price circumstances.<br>
+<em>For example, note that the author and EESC are sharing contractor expenses, or that our PNW partners pay a special price (e.g. as for the PNW handbooks).</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1159,6 +1161,40 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'label' => 'Estimate/expense notes',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3246,7 +3282,9 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
 <em> Note: It\'s easiest to confirm that all authors are in the database before creating or editing a project.<br>
 If you forget, you can also open a second browser tab, open CatMan, and create and save a new author before returning to this form.</em>');
-  t('Enter any additional notes about the estimates and expenses noted above.<br><em>Note: For example, note that a grant is paying for a portion of printing expenses, or that the author and EESC are sharing contractor expenses.</em>');
+  t('Enter any additional notes about the estimates and expenses above.<br>
+Also enter notes regarding special cost/copy or sales price circumstances.<br>
+<em>For example, note that the author and EESC are sharing contractor expenses, or that our PNW partners pay a special price (e.g. as for the PNW handbooks).</em>');
   t('Enter any dashes and letters that come after the numeric portion of the series number.<br>
 <em>For example, if the series number is EM 1234-S, enter "-S". If the series number is 4-H 360R, enter "R". For 4-H publications that have a series number with a leading zero, enter the number and suffix. For example, if the series number is 4-H 0244L, enter "0244L".</em>');
   t('Enter any general notes about this project.<br>
