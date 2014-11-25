@@ -36,6 +36,7 @@ function osu_publication_field_default_field_bases() {
       'referenceable_types' => array(
         'account_type' => 'account_type',
         'announcement' => 0,
+        'catman_webform' => 0,
         'estimates_expenses' => 0,
         'osu_catalog_publication' => 0,
         'page' => 0,

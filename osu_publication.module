@@ -18,12 +18,7 @@ include_once('osu_publication.features.inc');
  * Implements hook_form_alter.
  */
 function osu_publication_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'search_block_form'){
-    $form['search_block_form']['#title'] = t('Submit');
-    $form['actions']['submit']['#value'] = t('Submit');
-    $form['search_block_form']['#size'] = 30;
-    $form['search_block_form']['#attributes']['placeholder'] = t('Search by topic, author, or series number');
-  }
+
   if($form['#id'] == 'views-exposed-form-osu-publication-taxonomy-term-topic-child-term-page'){
     $form['field_media_type_tid']['#options']['All'] = 'Media Type';
   }
@@ -40,7 +35,24 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'osu_catalog_publication_node_form') {
-    // dpm($form);
+
+    //unset($form['#groups']['group_publishing']);
+    //unset($form['field_publication_product']['und']['form']);
+
+    // if ($form[['field_add_to_store']['und']['#default_value']) {
+    //   # code...
+    // }
+    //
+
+    // dpm($form, '$form array');
+    // dpm($form_state['values'], '$form_state array');
+    // if ($form_state['field']['field_add_to_store']['und']['instance']['default_value'][0]['value'] = 0) {
+    //   dpm('add to store is 0');
+    // }
+    // else {
+    //   dpm('add to store is 1');
+    // }
+
     global $user;
     // Disable add to store for everyone except Store managers (7) and Administrators (3).
     if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
@@ -209,9 +221,17 @@ function osu_publication_tokens($type, $tokens, array $data = array(), array $op
   }
 }
 
+/**
+ * Perform alterations before an entity form is included in the IEF widget.
+ *
+ * @param $entity_form
+ *   Nested array of form elements that comprise the entity form.
+ * @param $form_state
+ *   The form state of the parent form.
+ */
 
 function osu_publication_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
-  // dpm($entity_form);
+  //dpm($entity_form, '$entity_form array');
   // Disable add to store for everyone except Store managers (7) and Administrators (3).
   global $user;
 

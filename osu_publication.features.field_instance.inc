@@ -24,6 +24,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -64,6 +76,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -102,6 +126,18 @@ function osu_publication_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -147,6 +183,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'commerce_price_formatted_amount',
         'weight' => 1,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -190,6 +238,18 @@ function osu_publication_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -246,6 +306,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 5,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -295,6 +367,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -336,6 +420,18 @@ function osu_publication_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 0,
       ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -369,31 +465,38 @@ function osu_publication_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
 If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
-<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>',
+<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing, payment, and accounting occur through other OSU systems.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 33,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 19,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 32,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 29,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -420,7 +523,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 46,
@@ -442,27 +545,35 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 32,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 44,
+      ),
+      'rss' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 36,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 31,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 28,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -510,24 +621,32 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'search_index' => array(
+      'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 13,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -578,17 +697,38 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 0,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
       'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 17,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -631,21 +771,34 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 46,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -703,27 +856,34 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 46,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 33,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 48,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 45,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 44,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 55,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -770,27 +930,34 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 43,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 30,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 47,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 42,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 40,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -845,13 +1012,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'type' => 'date_default',
         'weight' => 6,
       ),
-      'search_index' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'search_result' => array(
+      'full' => array(
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
@@ -862,7 +1023,25 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 14,
+        'weight' => 6,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'search_index' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -887,7 +1066,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_date_reviewed',
-    'label' => 'Date reviewed',
+    'label' => 'Reviewed',
     'required' => 0,
     'settings' => array(
       'default_value' => 'blank',
@@ -921,27 +1100,34 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 41,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 28,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 45,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 40,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 38,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 49,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -968,7 +1154,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 53,
@@ -983,21 +1169,34 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 53,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 40,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 55,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1062,21 +1261,40 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 19,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 42,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1097,6 +1315,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
       'active' => 1,
       'module' => 'inline_entity_form',
       'settings' => array(
+        'apply_chosen' => '',
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 0,
@@ -1120,27 +1339,34 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 47,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 34,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 49,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 46,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 45,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 56,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1217,21 +1443,34 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 54,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 41,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 56,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1296,17 +1535,31 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'type' => 'text_default',
         'weight' => 55,
       ),
-      'search_index' => array(
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 43,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 57,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'search_result' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1345,27 +1598,34 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 39,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 26,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 43,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 38,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 36,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 47,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1409,21 +1669,34 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 51,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 38,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1467,27 +1740,34 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 18,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 29,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 25,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1529,25 +1809,38 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'deleted' => 0,
     'description' => '<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
 Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
-<strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />',
+<strong>Note:</strong> Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 50,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 37,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1589,27 +1882,35 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'hs_taxonomy',
+        'settings' => array(),
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 44,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 31,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_rss_category',
+        'weight' => 7,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 44,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 42,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1651,27 +1952,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 47,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 43,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 41,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1712,27 +2020,35 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 29,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 16,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 28,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 23,
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1760,7 +2076,7 @@ To remove a media type, click "Remove."',
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 55,
@@ -1775,21 +2091,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 20,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 45,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1848,27 +2177,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 49,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 36,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 48,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 47,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 58,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1934,27 +2270,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 48,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 35,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 50,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 47,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 46,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 57,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1998,27 +2341,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'hs_taxonomy',
+        'settings' => array(),
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 34,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 20,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 33,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 30,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2066,27 +2416,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 38,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 25,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 42,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 37,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 35,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2128,18 +2485,6 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -2149,7 +2494,42 @@ To remove a media type, click "Remove."',
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 24,
+        'weight' => 30,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'rss_date',
+        'settings' => array(
+          'rss_element' => 'dc:date',
+        ),
+        'type' => 'rss_date',
+        'weight' => 5,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(),
+        'type' => 'date_plain',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'full_month_year',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2213,24 +2593,35 @@ To remove a media type, click "Remove."',
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'search_index' => array(
+      'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
+        'module' => 'text',
         'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
+          'trim_length' => 200,
         ),
-        'type' => 'editable',
-        'weight' => 12,
+        'type' => 'text_trimmed',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2274,36 +2665,48 @@ To remove a media type, click "Remove."',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'commerce_cart',
         'settings' => array(
           'combine' => 1,
           'default_quantity' => 1,
-          'line_item_type' => 0,
+          'line_item_type' => 'product',
           'show_quantity' => 1,
           'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 9,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => 1,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => 1,
+          'show_single_product_attributes' => 0,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 9,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'commerce_cart',
-        'settings' => array(
-          'combine' => TRUE,
-          'default_quantity' => 1,
-          'line_item_type' => 'product',
-          'show_quantity' => FALSE,
-          'show_single_product_attributes' => FALSE,
-        ),
-        'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 16,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2341,13 +2744,16 @@ To remove a media type, click "Remove."',
       'active' => 1,
       'module' => 'inline_entity_form',
       'settings' => array(
+        'apply_chosen' => '',
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => FALSE,
-          'autogenerate_title' => 0,
+          'autogenerate_title' => 1,
           'delete_references' => 1,
+          'label_plural' => 'products',
+          'label_singular' => 'product',
           'match_operator' => 'CONTAINS',
-          'use_variation_language' => 0,
+          'override_labels' => 0,
         ),
       ),
       'type' => 'inline_entity_form_single',
@@ -2369,27 +2775,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 40,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 27,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 44,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 39,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 37,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 48,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2439,11 +2852,31 @@ To remove a media type, click "Remove."',
         'type' => 'image',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'publication_node',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'rss_thumbnail_300',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -2528,7 +2961,7 @@ To remove a media type, click "Remove."',
     'bundle' => 'osu_catalog_publication',
     'default_value' => array(
       0 => array(
-        'radioactivity_energy' => 0,
+        'radioactivity_energy' => 2000,
         'radioactivity_timestamp' => 1408733961,
       ),
     ),
@@ -2536,7 +2969,18 @@ To remove a media type, click "Remove."',
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 90,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'radioactivity',
         'settings' => array(
           'accuracy' => 100,
@@ -2544,19 +2988,25 @@ To remove a media type, click "Remove."',
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 56,
+        'weight' => 11,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2573,7 +3023,7 @@ To remove a media type, click "Remove."',
     'settings' => array(
       'history' => 1,
       'history_limit' => 8,
-      'profile' => 'default_weekly',
+      'profile' => 'default_daily',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2594,27 +3044,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 42,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 29,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 46,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 41,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 39,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 50,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2659,27 +3116,39 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 27,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 14,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 26,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 21,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2724,27 +3193,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 26,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 13,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 25,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 20,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2771,7 +3247,7 @@ To remove a media type, click "Remove."',
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 2,
@@ -2788,27 +3264,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 15,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 27,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 22,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2851,18 +3334,6 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'search_result' => array(
-        'label' => 'above',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -2872,7 +3343,31 @@ To remove a media type, click "Remove."',
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 31,
+        'weight' => 35,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 39,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 44,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2923,21 +3418,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 21,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 12,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2961,7 +3469,7 @@ To remove a media type, click "Remove."',
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'pdf mp3',
+      'file_extensions' => 'pdf mp3 mp4',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
@@ -3004,21 +3512,34 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 52,
+      ),
+      'full' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 39,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 54,
       ),
       'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3079,28 +3600,36 @@ To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'inline',
+        'module' => 'hs_taxonomy',
+        'settings' => array(),
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 45,
+      ),
+      'full' => array(
+        'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 32,
+      ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_rss_category',
+        'weight' => 8,
       ),
       'search_index' => array(
         'label' => 'hidden',
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 40,
+        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 43,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 54,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3146,6 +3675,18 @@ To remove a topic, click "Remove."',
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3180,6 +3721,19 @@ To remove a topic, click "Remove."',
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
@@ -3224,6 +3778,19 @@ To remove a topic, click "Remove."',
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3258,7 +3825,7 @@ To remove a topic, click "Remove."',
 </ul>');
   t('<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
 Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
-<strong>Note:</strong> Contact the EESC web team for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />');
+<strong>Note:</strong> Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).</p>');
   t('Account');
   t('Add to store');
   t('Alt series number');
@@ -3272,7 +3839,6 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Cover image');
   t('Date');
   t('Date published or revised');
-  t('Date reviewed');
   t('Describe the quantity or scope (e.g., number of copies, copies per year, hours, or illustrations).');
   t('Description');
   t('EESC accounting staff will enter the invoice date.');
@@ -3326,6 +3892,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
   t('Radioactivity');
   t('Record any notes about the status or results of periodic review.');
   t('Review notes');
+  t('Reviewed');
   t('Select appropriate topics and subtopics.<br>
 First, choose a topic from the dropdown list. Then click "Add."<br>
 If the topic has subtopics, a second dropdown list will appear. Select a subtopic, and then click "Add."<br>
@@ -3337,7 +3904,7 @@ To remove a media type, click "Remove."');
   t('Select the mode (or modes) of delivery for this project.');
   t('Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
 If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
-<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing and official accounting occur through other OSU systems.</em>');
+<em>Note: Account, estimate, and expense information shown here is for information only. Actual billing, payment, and accounting occur through other OSU systems.</em>');
   t('Select the type of estimate or expense.');
   t('Select whether this is an estimate or actual expense.');
   t('Select whether this project is produced by EESC or purchased from one of our PNW publishing partners.');
