@@ -30,7 +30,7 @@ $config = array(
     'reset_hs'  => 1,
   ),
   'editability' => array(
-    'status' => 1,
+    'status' => 0,
     'item_types' => array(
       0 => '',
       1 => '',

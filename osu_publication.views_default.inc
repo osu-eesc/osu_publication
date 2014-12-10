@@ -1206,6 +1206,16 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: No results text */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['ui_name'] = 'No results text';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No publications are currently available from %1';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_authors_entity_ref_target_id']['id'] = 'field_authors_entity_ref_target_id';

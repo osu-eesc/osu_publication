@@ -936,11 +936,9 @@ function osu_publication_strongarm() {
   $strongarm->name = 'hs_config_taxonomy-2';
   $strongarm->value = array(
     'config_id' => 'taxonomy-2',
-    'save_lineage' => 0,
-    'enforce_deepest' => 0,
-    'entity_count' => 0,
-    'require_entity' => 0,
-    'resizable' => 1,
+    'save_lineage' => '0',
+    'enforce_deepest' => '0',
+    'resizable' => '1',
     'level_labels' => array(
       'status' => 0,
       'labels' => array(
@@ -951,11 +949,11 @@ function osu_publication_strongarm() {
     'dropbox' => array(
       'status' => 1,
       'title' => 'All selections',
-      'limit' => 0,
-      'reset_hs' => 1,
+      'limit' => '0',
+      'reset_hs' => '1',
     ),
     'editability' => array(
-      'status' => 1,
+      'status' => 0,
       'item_types' => array(
         0 => '',
         1 => '',
@@ -965,7 +963,7 @@ function osu_publication_strongarm() {
         1 => 1,
       ),
       'allow_new_levels' => 0,
-      'max_levels' => 1,
+      'max_levels' => '1',
     ),
   );
   $export['hs_config_taxonomy-2'] = $strongarm;
