@@ -1016,7 +1016,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'full_month_year',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
