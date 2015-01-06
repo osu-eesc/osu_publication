@@ -316,7 +316,7 @@ function osu_publication_inline_entity_form_table_fields_alter(&$fields, $contex
 
       $fields['field_expense_invoice_date'] = array(
         'type' => 'field',
-        'label' => t('Invoice date'),
+        'label' => t('Invoice paid date'),
         'weight' => 7,
       );
 
