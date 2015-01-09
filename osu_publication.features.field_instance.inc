@@ -328,7 +328,7 @@ function osu_publication_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_expense_invoice_date',
-    'label' => 'Invoice date',
+    'label' => 'Invoice paid date',
     'required' => 0,
     'settings' => array(
       'default_value' => 'blank',
@@ -3469,7 +3469,7 @@ To remove a media type, click "Remove."',
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'pdf mp3 mp4',
+      'file_extensions' => 'pdf mp3 mp4 xls xlsx',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
