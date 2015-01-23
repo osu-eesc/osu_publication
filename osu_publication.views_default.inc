@@ -417,7 +417,7 @@ function osu_publication_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Recent publications';
+  $handler->display->display_options['title'] = 'OSU Extension Catalog: Recent publications';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -439,7 +439,7 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['nid']['ui_name'] = 'GUID';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'http://catalog.extension.dev/node/[nid]';
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'https://catalog.extension.oregonstate.edu/node/[nid]';
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nid']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
@@ -717,7 +717,7 @@ function osu_publication_views_default_views() {
   /* Display: Feed: By topic */
   $handler = $view->new_display('feed', 'Feed: By topic', 'feed_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Publications by topic: %1';
+  $handler->display->display_options['title'] = 'OSU Extension Catalog: Publications by topic: %1';
   $handler->display->display_options['display_description'] = 'displays all publications related to a topic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -2450,7 +2450,7 @@ function osu_publication_views_default_views() {
   $view = new view();
   $view->name = 'suggest_series_number';
   $view->description = 'suggests the next series number';
-  $view->tag = 'default';
+  $view->tag = 'catman';
   $view->base_table = 'node';
   $view->human_name = 'suggest_series_number';
   $view->core = 7;
@@ -2514,13 +2514,6 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['arguments']['field_series_prefix_value_1']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_series_prefix_value_1']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_series_prefix_value_1']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';

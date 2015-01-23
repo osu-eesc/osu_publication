@@ -478,7 +478,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 33,
       ),
       'rss' => array(
         'label' => 'above',
@@ -555,7 +555,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 44,
+        'weight' => 3,
       ),
       'rss' => array(
         'label' => 'above',
@@ -626,7 +626,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 9,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -678,7 +678,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -704,7 +704,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -757,7 +757,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -780,7 +780,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 58,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -865,7 +865,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 46,
       ),
       'rss' => array(
         'label' => 'above',
@@ -939,7 +939,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 43,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1023,7 +1023,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1109,7 +1109,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 41,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1178,7 +1178,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 53,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1276,7 +1276,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 55,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1348,7 +1348,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 47,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1452,7 +1452,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 54,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1539,7 +1539,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 56,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1584,7 +1584,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'size' => 20,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1607,7 +1607,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 39,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1678,7 +1678,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 51,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1749,7 +1749,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 32,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1798,7 +1798,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1822,7 +1822,7 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 50,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1891,7 +1891,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 44,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1939,7 +1939,7 @@ To remove a media type, click "Remove."',
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1961,7 +1961,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 59,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2029,7 +2029,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 30,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2100,7 +2100,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 57,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2186,7 +2186,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 49,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2279,7 +2279,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 48,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2350,7 +2350,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 34,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2425,7 +2425,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 38,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2500,7 +2500,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 31,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2598,7 +2598,7 @@ To remove a media type, click "Remove."',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2653,7 +2653,7 @@ To remove a media type, click "Remove."',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2688,7 +2688,7 @@ To remove a media type, click "Remove."',
           'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 9,
+        'weight' => 13,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2784,7 +2784,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 40,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2988,7 +2988,7 @@ To remove a media type, click "Remove."',
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 11,
+        'weight' => 1,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3053,7 +3053,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 42,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3111,7 +3111,7 @@ To remove a media type, click "Remove."',
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the numeric portion of the series number.<br>When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed.<br>
+    'description' => 'Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>',
     'display' => array(
       'default' => array(
@@ -3130,7 +3130,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 28,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3180,7 +3180,7 @@ To remove a media type, click "Remove."',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -3202,7 +3202,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 27,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3250,7 +3250,7 @@ To remove a media type, click "Remove."',
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -3273,7 +3273,7 @@ To remove a media type, click "Remove."',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 29,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -3322,7 +3322,7 @@ To remove a media type, click "Remove."',
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -3349,7 +3349,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 35,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3427,7 +3427,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 26,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3521,7 +3521,7 @@ To remove a media type, click "Remove."',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 52,
       ),
       'rss' => array(
         'label' => 'above',
@@ -3609,7 +3609,7 @@ To remove a topic, click "Remove."',
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 45,
       ),
       'rss' => array(
         'label' => 'inline',
@@ -3658,7 +3658,7 @@ To remove a topic, click "Remove."',
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -3856,7 +3856,7 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
   t('Enter any general notes about this project.<br>
 <em>Note: Please use the separate fields provided elsewhere for notes related to periodic review, expenses, and print specifications.</em>');
   t('Enter print specifications for future reference.');
-  t('Enter the numeric portion of the series number.<br>When you create a new project, this field will automatically select the next number (in chronological order) for the series prefix you selected. You can override/edit this if needed.<br>
+  t('Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
   t('Enter the permanent link for the item.<br>
 <em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
@@ -3873,8 +3873,8 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
   t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).');
   t('If this project has two series numbers (e.g., a 4-H number and a PNW number), enter the alternate series number here.<br><em>Note: For Oregon 4-H publications, the 4-H series number is the primary series number, and the PNW number is the alternate series number.</em>');
   t('Index and activity code');
-  t('Invoice date');
   t('Invoice number');
+  t('Invoice paid date');
   t('Last name');
   t('Length');
   t('Link or file upload?');

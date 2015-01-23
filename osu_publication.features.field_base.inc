@@ -1373,7 +1373,7 @@ function osu_publication_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'blank' => 'Blank',
-        '4h' => '4-H',
+        '4-h' => '4-H',
         'dvd' => 'DVD',
         'eesc' => 'EESC',
         'em' => 'EM',

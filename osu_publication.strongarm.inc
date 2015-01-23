@@ -439,7 +439,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '23',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -469,7 +469,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '1',
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -499,7 +499,7 @@ function osu_publication_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '8',
+            'weight' => '12',
             'visible' => TRUE,
           ),
           'rss' => array(
@@ -529,7 +529,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '24',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'rss' => array(
@@ -585,7 +585,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '48',
+            'weight' => '60',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -641,7 +641,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '22',
+            'weight' => '36',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -757,7 +757,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '7',
+            'weight' => '11',
             'visible' => TRUE,
           ),
           'rss' => array(
@@ -787,7 +787,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '4',
+            'weight' => '8',
             'visible' => TRUE,
           ),
           'rss' => array(
@@ -831,7 +831,7 @@ function osu_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '10',
+            'weight' => '14',
             'visible' => TRUE,
           ),
           'rss' => array(
@@ -1047,10 +1047,7 @@ function osu_publication_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_osu_catalog_publication';
-  $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
-  );
+  $strongarm->value = array();
   $export['node_options_osu_catalog_publication'] = $strongarm;
 
   $strongarm = new stdClass();

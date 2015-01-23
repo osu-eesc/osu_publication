@@ -36,22 +36,7 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 
   if ($form_id == 'osu_catalog_publication_node_form') {
 
-    //unset($form['#groups']['group_publishing']);
-    //unset($form['field_publication_product']['und']['form']);
 
-    // if ($form[['field_add_to_store']['und']['#default_value']) {
-    //   # code...
-    // }
-    //
-
-    // dpm($form, '$form array');
-    // dpm($form_state['values'], '$form_state array');
-    // if ($form_state['field']['field_add_to_store']['und']['instance']['default_value'][0]['value'] = 0) {
-    //   dpm('add to store is 0');
-    // }
-    // else {
-    //   dpm('add to store is 1');
-    // }
 
     global $user;
     // Disable add to store for everyone except Store managers (7) and Administrators (3).
@@ -71,9 +56,13 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
     $form['field_authors_entity_ref']['und']['actions']['ief_add_existing']['#value'] = t('Add existing author');
     $form['field_authors_entity_ref']['und']['actions']['ief_add']['#value'] = t('Add new author');
     $form['field_authors_entity_ref']['und']['form']['#title'] = t('Add new author');
+    $form['field_authors_entity_ref']['und']['form']['status']['#access'] = FALSE;
+    $form['field_authors_entity_ref']['und']['form']['actions']['ief_add_save']['#value'] = t('Save and continue');
 
     $form['field_estimate_entity_ref']['und']['actions']['ief_add']['#value'] = t('Add estimate or expense');
     $form['field_estimate_entity_ref']['und']['form']['#title'] = t('Add estimate or expense');
+    $form['field_estimate_entity_ref']['und']['form']['status']['#access'] = FALSE;
+    $form['field_estimate_entity_ref']['und']['form']['actions']['ief_add_save']['#value'] = t('Save and continue');
 
     $description_author = 'To add an author who\'s already in the database: Click the "add existing author" button. Start typing, and select the correct name from the auto-complete list.<br />To add an author who\'s not already in the database: Click the "add new author" button, fill in the appropriate fields, and click "save."<br />If you\'re not sure: Try the "add existing" button first. If you don\'t find the person, click "cancel" and then click the "add new" button.';
 
@@ -84,48 +73,91 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
     $form['field_authors_entity_ref']['und']['#description'] = t($description_author);
 
 
-    if (empty($form['nid']['#value']) && empty($form['field_series_number']['und'][0]['value']['#default_value'])) {
-      $form['field_series_prefix'] = array(
-        '#title' => t('Series prefix'),
-        '#type' => 'select',
-        '#options' => $form['field_series_prefix']['und']['#options'],
-        '#ajax' => array(
-          'callback' => 'series_number_callback',
-          'wrapper' => 'series_number_div',
-        ),
-      );
+    // Fieldset to put series look up fields in
+    $form['series_lookup'] = array(
+      '#type' => 'fieldset',
+      '#weight' => 2,
+      '#title' => t('Series number lookup'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#description' => t('Select a series prefix to find the next number in the series.'),
+      '#attributes' => array('class' => array('series-lookup')),
+    );
 
-      $nextseriesnum = '';
+    $form['series_lookup']['series_prefix_lookup'] = array(
+      '#title' => t('Series prefix'),
+      '#attributes' => array('class' => array('series_prefix_lookup')),
+      '#type' => 'select',
+      '#options' => array(
+        '_none' => t('- Select prefix -'),
+        '4-h' => t('4-H'),
+        'dvd' => t('DVD'),
+        'eesc' => t('EESC'),
+        'em' => t('EM'),
+        'ec' => t('EC'),
+        'fg' => t('FG'),
+        'fs' => t('FS'),
+        'manual' => t('Manual'),
+        'pnw' => t('PNW'),
+        'series' => t('Series'),
+        'sr' => t('SR'),
+        'weed' => t('Weed'),
+        'insect' => t('Insect'),
+        'plant' => t('Plant'),
+        'sb' => t('SB'),
+        'sp' => t('SP'),
+        'tb' => t('TB'),
+       ),
+      '#ajax' => array(
+        'callback' => 'series_number_callback',
+        'wrapper' => 'series_number_div',
+      ),
+    );
 
-      if (empty($form['nid']['#value']) && !empty($form_state['values']['field_series_prefix']) ) {
-        // pass arg to view to get the highest series number
-        $args[0] = $form_state['values']['field_series_prefix'];
-        $view = views_get_view('suggest_series_number');
-        $display_id = 'nextseriesnumber';
-        $view->set_display($display_id);
-        $view->execute_display($display_id, $args);
+    if(!isset($nextseriesnum)) {
+      $nextseriesnum = NULL;
+    }
 
-        $results = $view->result;
+    if (!empty($form_state['values']['series_prefix_lookup'])) {
+
+      // pass arg to view to get the highest series number
+      $args[0] = $form_state['values']['series_prefix_lookup'];
+      $view = views_get_view('suggest_series_number');
+      $display_id = 'nextseriesnumber';
+      $view->set_display($display_id);
+      $view->execute_display($display_id, $args);
+
+      $results = $view->result;
+
+      if (empty($results)) {
+        $nextseriesnum = 1;
+      }
+      else {
         $nextseriesnum = $results[0]->field_data_field_series_number_field_series_number_value + 1;
       }
 
-      // This entire form element will be replaced with an updated value.
-      $form['field_series_number'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Series number'),
-        '#value' => $nextseriesnum,
-        '#prefix' => '<div id="series_number_div">',
-        '#suffix' => '</div>',
-      );
+    } // if (!empty($form_state['values']['series_prefix_lookup']))
 
-    }
+    $form['series_lookup']['suggested_series_number'] = array(
+      '#type' => 'textfield',
+      '#size' => 10,
+      '#title' => t('Suggested series number'),
+      '#value' => $nextseriesnum,
+      '#prefix' => '<div id="series_number_div" class="suggested-series-number">',
+      '#suffix' => '</div>',
+      '#attributes' => array('class' => array('suggested-series-number')),
+    );
+
+     // Position the fieldset to group_basic vertical tab
+    $form['#group_children']['series_lookup'] = 'group_basic';
 
   }
 
-}
+} //if ($form_id == 'osu_catalog_publication_node_form')
 
 function series_number_callback($form, $form_state) {
-  return $form['field_series_number'];
+  // provide value to suggested series number field
+  return $form['series_lookup']['suggested_series_number'];
 }
 
 function series_prefix_number_suffix_callback($form, $form_state) {
