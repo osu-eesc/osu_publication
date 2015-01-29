@@ -36,8 +36,6 @@ function osu_publication_form_alter(&$form, &$form_state, $form_id) {
 
   if ($form_id == 'osu_catalog_publication_node_form') {
 
-
-    dpm($form, 'form array');
     global $user;
     // Disable add to store for everyone except Store managers (7) and Administrators (3).
     if (!in_array($user->roles[3], $user->roles) && !in_array($user->roles[7], $user->roles)) {
