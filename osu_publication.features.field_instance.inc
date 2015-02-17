@@ -464,15 +464,13 @@ function osu_publication_field_default_field_instances() {
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
-If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
 <em>Note: Account, estimate, and expense information shown here is for information only. Actual billing, payment, and accounting occur through other OSU systems.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
         'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 33,
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'full' => array(
         'label' => 'above',
@@ -539,23 +537,22 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
       ),
     ),
     'deleted' => 0,
-    'description' => '<em><strong>Note to store manager:</strong></em><br>
-<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > Products > <a href="/admin/commerce/products/variations"><strong>Product Variations</strong></a>. Note the reason for the changes in the log message section before saving.</li>
-</ul>',
+    'description' => '<em><strong>Notes to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > <a href="/admin/commerce/products/variations"><strong>Products</strong></a> > edit. Note the reason for the changes in a log message before saving.</li>
+<li><strong>Remember:</strong> Changes to store information take effect immediately (no moderation). <br />For existing projects, make these changes during final review, right before publication.</li></ul>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 32,
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'rss' => array(
         'label' => 'above',
@@ -619,14 +616,14 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -704,7 +701,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -767,14 +764,13 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Enter the permanent link for the item.<br>
-<em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>',
+<em>Note: For publications, this is often a link to WSU or Idaho\'s Catalog. For videos, this is often a link to the captioned version in OSU\'s Media Space (or for newer videos, to YouTube).</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 23,
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -819,8 +815,10 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'label' => 'Catman link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => 'nofollow',
         'target' => 'default',
@@ -832,6 +830,7 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
       'enable_tokens' => 1,
       'rel_remove' => 'rel_remove_internal',
       'title' => 'none',
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => 'View online',
       'url' => 'optional',
@@ -856,10 +855,9 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
         'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 46,
+        'type' => 'hidden',
+        'weight' => 51,
       ),
       'full' => array(
         'label' => 'above',
@@ -926,14 +924,13 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
     'deleted' => 0,
     'description' => 'Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
 <em> Note: It\'s easiest to confirm that all authors are in the database before creating or editing a project.<br>
-If you forget, you can also open a second browser tab, open CatMan, and create and save a new author before returning to this form.</em>',
+Remember, you can add new authors in the "Project Information" fieldset and from your workbench.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
         'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 43,
+        'type' => 'hidden',
+        'weight' => 48,
       ),
       'full' => array(
         'label' => 'above',
@@ -1010,7 +1007,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1023,7 +1020,7 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1100,10 +1097,9 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 41,
+        'type' => 'hidden',
+        'weight' => 46,
       ),
       'full' => array(
         'label' => 'above',
@@ -1169,10 +1165,9 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 53,
+        'type' => 'hidden',
+        'weight' => 58,
       ),
       'full' => array(
         'label' => 'above',
@@ -1261,16 +1256,9 @@ If you forget, you can also open a second browser tab, open CatMan, and create a
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'commerce_cart',
-        'settings' => array(
-          'combine' => TRUE,
-          'default_quantity' => 1,
-          'line_item_type' => 'product',
-          'show_quantity' => FALSE,
-          'show_single_product_attributes' => FALSE,
-        ),
-        'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 19,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'full' => array(
         'label' => 'above',
@@ -1339,10 +1327,9 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 47,
+        'type' => 'hidden',
+        'weight' => 52,
       ),
       'full' => array(
         'label' => 'above',
@@ -1443,10 +1430,9 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 54,
+        'type' => 'hidden',
+        'weight' => 59,
       ),
       'full' => array(
         'label' => 'above',
@@ -1530,10 +1516,9 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 55,
+        'type' => 'hidden',
+        'weight' => 60,
       ),
       'full' => array(
         'label' => 'above',
@@ -1594,14 +1579,13 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Enter any general notes about this project.<br>
-<em>Note: Please use the separate fields provided elsewhere for notes related to periodic review, expenses, and print specifications.</em>',
+<em>Note: Please use the designated fields in other fieldsets for notes related to periodic review, expenses, and print specifications.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 44,
       ),
       'full' => array(
         'label' => 'above',
@@ -1646,6 +1630,40 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'label' => 'General notes',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1669,10 +1687,9 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 51,
+        'type' => 'hidden',
+        'weight' => 56,
       ),
       'full' => array(
         'label' => 'above',
@@ -1740,10 +1757,9 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 31,
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1807,16 +1823,16 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
-Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
-<strong>Note:</strong> Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).</p>',
+    'description' => '<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will live on the CatMan server.<br />
+Select "<em>permanent link</em>" if this is a publication that lives somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
+Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />
+<strong>Remember:</strong> Changes to files and links take effect immediately (no moderation). For existing projects, make these changes during final review, right before publication.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 50,
+        'type' => 'hidden',
+        'weight' => 55,
       ),
       'full' => array(
         'label' => 'above',
@@ -1882,10 +1898,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 44,
+        'type' => 'hidden',
+        'weight' => 49,
       ),
       'full' => array(
         'label' => 'above',
@@ -1952,10 +1967,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 24,
+        'type' => 'hidden',
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2016,14 +2030,14 @@ To remove a media type, click "Remove."',
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If this is a new Catalog item, select "published."<br>
+If this is a revised Catalog item, select "revised."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 29,
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2091,10 +2105,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 20,
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'above',
@@ -2177,10 +2190,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 49,
+        'type' => 'hidden',
+        'weight' => 54,
       ),
       'full' => array(
         'label' => 'above',
@@ -2270,10 +2282,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 48,
+        'type' => 'hidden',
+        'weight' => 53,
       ),
       'full' => array(
         'label' => 'above',
@@ -2341,10 +2352,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'full' => array(
         'label' => 'above',
@@ -2416,10 +2426,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 43,
       ),
       'full' => array(
         'label' => 'above',
@@ -2485,16 +2494,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 30,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2568,7 +2570,7 @@ To remove a media type, click "Remove."',
       'module' => 'date',
       'settings' => array(
         'increment' => 1,
-        'input_format' => 'Y-m-d H:i:s',
+        'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
@@ -2591,14 +2593,14 @@ To remove a media type, click "Remove."',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -2675,7 +2677,7 @@ To remove a media type, click "Remove."',
           'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2688,7 +2690,7 @@ To remove a media type, click "Remove."',
           'show_single_product_attributes' => 0,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'rss' => array(
         'label' => 'above',
@@ -2771,14 +2773,13 @@ To remove a media type, click "Remove."',
     ),
     'deleted' => 0,
     'description' => 'Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
-<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" section.</em>',
+<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" fieldset.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 40,
+        'type' => 'hidden',
+        'weight' => 45,
       ),
       'full' => array(
         'label' => 'above',
@@ -2840,7 +2841,7 @@ To remove a media type, click "Remove."',
   $field_instances['node-osu_catalog_publication-field_publication_thumbnail'] = array(
     'bundle' => 'osu_catalog_publication',
     'deleted' => 0,
-    'description' => 'Suggested wording for alt text: Cover image of EM 1234',
+    'description' => 'Suggested wording for alt text: Cover image of "Title" publication',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -2948,7 +2949,7 @@ To remove a media type, click "Remove."',
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'cover_preview',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -2970,14 +2971,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 90,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 11,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -3040,14 +3036,16 @@ To remove a media type, click "Remove."',
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Record any notes about the status or results of periodic review.',
+    'description' => 'Above, record the date that a review response is received from the faculty content specialist.<br>
+Here, record any notes about the status or results of periodic review, and note when a revision proposal is received. Examples:<br>
+1-1-15: Asked John Doe to review. 1-24-15: John reviewed. OK for 4 years.<br>
+1-1-15: Asked Jane Doe to review. 1-24-15: Jane reviewed. OK for 1 year. Remove from Catalog if no revision proposal rec\'d by Jan. 2016.<br>',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 42,
+        'type' => 'hidden',
+        'weight' => 47,
       ),
       'full' => array(
         'label' => 'above',
@@ -3092,6 +3090,40 @@ To remove a media type, click "Remove."',
     'label' => 'Review notes',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3116,15 +3148,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 27,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -3193,10 +3219,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 26,
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -3264,10 +3289,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 28,
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -3334,16 +3358,9 @@ To remove a media type, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 35,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
       ),
       'full' => array(
         'label' => 'above',
@@ -3414,14 +3431,13 @@ To remove a media type, click "Remove."',
   $field_instances['node-osu_catalog_publication-field_supplemental_file'] = array(
     'bundle' => 'osu_catalog_publication',
     'deleted' => 0,
-    'description' => 'If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).',
+    'description' => 'If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234-chapter1 or em1234-audio1. Add a display title for each file (e.g., Chapter 1).',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'full' => array(
         'label' => 'above',
@@ -3508,14 +3524,13 @@ To remove a media type, click "Remove."',
     'bundle' => 'osu_catalog_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'TODO: Add help text',
+    'description' => 'Provide a title and full URL (http://example.com) for the link.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 52,
+        'type' => 'hidden',
+        'weight' => 57,
       ),
       'full' => array(
         'label' => 'above',
@@ -3560,8 +3575,10 @@ To remove a media type, click "Remove."',
     'label' => 'Supplemental link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => 'nofollow',
         'target' => 'default',
@@ -3573,6 +3590,7 @@ To remove a media type, click "Remove."',
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'required',
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -3594,16 +3612,16 @@ To remove a media type, click "Remove."',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select appropriate topics and subtopics.<br>
-First, choose a topic from the dropdown list. Then click "Add."<br>
+First, choose a main topic from the dropdown list. Then click "Add."<br>
 If the topic has subtopics, a second dropdown list will appear. Select a subtopic, and then click "Add."<br>
+Click "Add" once more to confirm. This will add the topic/subtopic pair to this project. You should see it listed below.<br>
 To remove a topic, click "Remove."',
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 45,
+        'type' => 'hidden',
+        'weight' => 50,
       ),
       'full' => array(
         'label' => 'inline',
@@ -3667,7 +3685,7 @@ To remove a topic, click "Remove."',
     'bundle' => 'publication_author',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'For reference, enter author\'s title and affiliation, following the format specified in the EESC publishing style guide.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -3695,10 +3713,45 @@ To remove a topic, click "Remove."',
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_author_notes',
     'label' => 'Notes',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3718,7 +3771,7 @@ To remove a topic, click "Remove."',
     'bundle' => 'publication_author',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter first name and middle initial, if any.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -3747,10 +3800,45 @@ To remove a topic, click "Remove."',
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_first_name',
     'label' => 'First name',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3770,7 +3858,7 @@ To remove a topic, click "Remove."',
     'bundle' => 'publication_author',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter last name, or team name (e.g., PNW 4-H Horse Curriculum Team).',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -3804,6 +3892,40 @@ To remove a topic, click "Remove."',
     'label' => 'Last name',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'emogrifier' => 'emogrifier',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => -6,
+            ),
+            'emogrifier' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3820,12 +3942,17 @@ To remove a topic, click "Remove."',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<em><strong>Note to store manager:</strong></em><br>
-<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > Products > <a href="/admin/commerce/products/variations"><strong>Product Variations</strong></a>. Note the reason for the changes in the log message section before saving.</li>
-</ul>');
-  t('<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will "live" on the CatMan server.<br />
-Select "<em>permanent link</em>" if this is a publication that "lives" somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
-<strong>Note:</strong> Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).</p>');
+  t('<em><strong>Notes to store manager:</strong></em><br>
+<ul><li>If you are changing cost, price, or inventory of an existing item (because of a purchase, revision, reprint, or reduction): <br />Make these changes through Store > <a href="/admin/commerce/products/variations"><strong>Products</strong></a> > edit. Note the reason for the changes in a log message before saving.</li>
+<li><strong>Remember:</strong> Changes to store information take effect immediately (no moderation). <br />For existing projects, make these changes during final review, right before publication.</li></ul>');
+  t('<p>Select "<em>file upload</em>" if this is an OSU Extension publication that will live on the CatMan server.<br />
+Select "<em>permanent link</em>" if this is a publication that lives somewhere else (e.g., PNW publication from WSU or UI, video on OSU\'s Media Space, PNW handbook website).<br />
+Contact a CatMan admin for assistance with uploading and linking to odd stuff (e.g., Pachyderm, audio slideshows).<br />
+<strong>Remember:</strong> Changes to files and links take effect immediately (no moderation). For existing projects, make these changes during final review, right before publication.</p>');
+  t('Above, record the date that a review response is received from the faculty content specialist.<br>
+Here, record any notes about the status or results of periodic review, and note when a revision proposal is received. Examples:<br>
+1-1-15: Asked John Doe to review. 1-24-15: John reviewed. OK for 4 years.<br>
+1-1-15: Asked Jane Doe to review. 1-24-15: Jane reviewed. OK for 1 year. Remove from Catalog if no revision proposal rec\'d by Jan. 2016.<br>');
   t('Account');
   t('Add to store');
   t('Alt series number');
@@ -3847,19 +3974,21 @@ Select "<em>permanent link</em>" if this is a publication that "lives" somewhere
   t('Enter a brief summary of the content. This description appears on the "detail page" for this item in the Catalog.');
   t('Enter a few characters of the corresponding author\'s name. Then select the correct name from the auto-complete list.<br>
 <em> Note: It\'s easiest to confirm that all authors are in the database before creating or editing a project.<br>
-If you forget, you can also open a second browser tab, open CatMan, and create and save a new author before returning to this form.</em>');
+Remember, you can add new authors in the "Project Information" fieldset and from your workbench.</em>');
   t('Enter any additional notes about the estimates and expenses above.<br>
 Also enter notes regarding special cost/copy or sales price circumstances.<br>
 <em>For example, note that the author and EESC are sharing contractor expenses, or that our PNW partners pay a special price (e.g. as for the PNW handbooks).</em>');
   t('Enter any dashes and letters that come after the numeric portion of the series number.<br>
 <em>For example, if the series number is EM 1234-S, enter "-S". If the series number is 4-H 360R, enter "R". For 4-H publications that have a series number with a leading zero, enter the number and suffix. For example, if the series number is 4-H 0244L, enter "0244L".</em>');
   t('Enter any general notes about this project.<br>
-<em>Note: Please use the separate fields provided elsewhere for notes related to periodic review, expenses, and print specifications.</em>');
+<em>Note: Please use the designated fields in other fieldsets for notes related to periodic review, expenses, and print specifications.</em>');
+  t('Enter first name and middle initial, if any.');
+  t('Enter last name, or team name (e.g., PNW 4-H Horse Curriculum Team).');
   t('Enter print specifications for future reference.');
   t('Enter the numeric portion of the series number.<br>
 <em>Note: For 4-H publications that have a series number with a leading zero (e.g., 4-H 0244L), do not enter anything in this field, and enter the number and suffix in the suffix field.</em>');
   t('Enter the permanent link for the item.<br>
-<em>Note: For publications, this is often a bitstream URL from ScholarsArchive. For videos, this is often a link to the captioned version in OSU\'s Media Space.</em>');
+<em>Note: For publications, this is often a link to WSU or Idaho\'s Catalog. For videos, this is often a link to the captioned version in OSU\'s Media Space (or for newer videos, to YouTube).</em>');
   t('Enter the quantity and type of content (e.g., 6 pages, 5 minutes). If length/quantity does not apply (e.g., Pachyderm or other online module, poster, etc.), leave this blank and note the format in the description field.');
   t('Estimate or actual');
   t('Estimate or expense type');
@@ -3867,10 +3996,13 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
   t('Estimates and expenses');
   t('Excel file upload');
   t('First name');
+  t('For reference, enter author\'s title and affiliation, following the format specified in the EESC publishing style guide.');
   t('Full series number');
   t('General notes');
   t('HTML version');
-  t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234_chapter1 or em1234_audio1. Add a display title for each file (e.g., Chapter 1).');
+  t('If needed, upload supplemental files (such as individual chapters of a lengthy publication or audio files). Name supplemental files as follows: em1234-chapter1 or em1234-audio1. Add a display title for each file (e.g., Chapter 1).');
+  t('If this is a new Catalog item, select "published."<br>
+If this is a revised Catalog item, select "revised."');
   t('If this project has two series numbers (e.g., a 4-H number and a PNW number), enter the alternate series number here.<br><em>Note: For Oregon 4-H publications, the 4-H series number is the primary series number, and the PNW number is the alternate series number.</em>');
   t('Index and activity code');
   t('Invoice number');
@@ -3888,14 +4020,15 @@ Also enter notes regarding special cost/copy or sales price circumstances.<br>
   t('Product');
   t('Program area');
   t('Project manager');
+  t('Provide a title and full URL (http://example.com) for the link.');
   t('Quantity');
   t('Radioactivity');
-  t('Record any notes about the status or results of periodic review.');
   t('Review notes');
   t('Reviewed');
   t('Select appropriate topics and subtopics.<br>
-First, choose a topic from the dropdown list. Then click "Add."<br>
+First, choose a main topic from the dropdown list. Then click "Add."<br>
 If the topic has subtopics, a second dropdown list will appear. Select a subtopic, and then click "Add."<br>
+Click "Add" once more to confirm. This will add the topic/subtopic pair to this project. You should see it listed below.<br>
 To remove a topic, click "Remove."');
   t('Select the EESC project manager for this project.');
   t('Select the Extension program area for this project.');
@@ -3903,7 +4036,6 @@ To remove a topic, click "Remove."');
 To remove a media type, click "Remove."');
   t('Select the mode (or modes) of delivery for this project.');
   t('Select the primary account for this item. For example, if this is an agriculture publication, select account Publications - Agriculture (TEX667 T721).<br>
-If you want to record an estimate or actual expense, do so in the "Estimate and expense notes" field below.<br>
 <em>Note: Account, estimate, and expense information shown here is for information only. Actual billing, payment, and accounting occur through other OSU systems.</em>');
   t('Select the type of estimate or expense.');
   t('Select whether this is an estimate or actual expense.');
@@ -3913,14 +4045,13 @@ If you want to record an estimate or actual expense, do so in the "Estimate and 
   t('Series suffix');
   t('Status');
   t('Status date');
-  t('Suggested wording for alt text: Cover image of EM 1234');
+  t('Suggested wording for alt text: Cover image of "Title" publication');
   t('Supplemental content');
   t('Supplemental link');
-  t('TODO: Add help text');
   t('This is the place to designate items that should <strong>always</strong> appear together in the Catalog (e.g., other publications in the same set, such as all "Living on the Land" titles). Enter a few characters of the title. When you see the right item listed in the auto-complete list, select it.');
   t('Topic');
   t('Update the status and status date to track major events (e.g., in production, published, reviewed).<br>
-<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" section.</em>');
+<em> Note: For details about status and deadlines when a project is "in production," consult the project manager.<br>Record the actual periodic review date and notes about periodic review in the "Publishing information" fieldset.</em>');
   t('Upload preview PDF if necessary.');
   t('Use two decimal places, no dollar sign.');
   t('When this project undergoes periodic review and a response from a faculty content specialist is received, record the date here.');

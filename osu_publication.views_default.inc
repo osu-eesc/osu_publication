@@ -1067,7 +1067,7 @@ function osu_publication_views_default_views() {
 <p class="hidden-phone">The Catalog is <em>the</em> source for current, peer-reviewed, research-based learning materials published by <a href="http://extension.oregonstate.edu">OSU Extension</a>. It is an active and growing resource, with learning materials in a variety of media for use in a variety of outreach and engagement activities and programs.</p>
 <p>Check out our new releases, see what\'s popular, browse by topic, or search away.</p>
 <p class="hidden-phone"><strong>Questions?</strong> Please review the <a href="/node/2">ordering information</a>, or <a href="/node/1222">contact us</a>.</p>
-
+<div class="rss-feed-icon"><a href="/publications/rss" title="Subscribe to OSU Catalog New Releases feed" alt="RSS feed icon"><img src="/files/images/feed.png"></a></div>
 <h2 class="title">New Releases</h2>
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -1177,6 +1177,17 @@ function osu_publication_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['element_class'] = 'new-revised-text';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date published or revised (field_publication_date) */
+  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Status date (field_status_date) */
+  $handler->display->display_options['sorts']['field_status_date_value']['id'] = 'field_status_date_value';
+  $handler->display->display_options['sorts']['field_status_date_value']['table'] = 'field_data_field_status_date';
+  $handler->display->display_options['sorts']['field_status_date_value']['field'] = 'field_status_date_value';
+  $handler->display->display_options['sorts']['field_status_date_value']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'node';
 
   /* Display: Projects by author */

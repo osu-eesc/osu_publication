@@ -185,7 +185,7 @@ function osu_publication_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Links and companion projects',
+    'label' => 'Files, links, and companions',
     'weight' => '3',
     'children' => array(
       0 => 'field_companion_resources',
@@ -200,12 +200,13 @@ function osu_publication_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Files, links, and companions',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-links field-group-tab',
         'required_fields' => 1,
+        'classes' => ' group-links field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_links|node|osu_catalog_publication|form'] = $field_group;
